@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import MobileMenu from "@/components/mobile-menu";
 
 interface Tecnico {
   id: string;
@@ -47,20 +48,21 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border">
+      <header className="bg-card shadow-sm border-b border-border relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
               <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <Button>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
               <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
                 Quem é Fredy
               </Button>
             </div>
+            <MobileMenu onNavigate={navigate} />
           </div>
         </div>
       </header>
