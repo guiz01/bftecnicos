@@ -13,10 +13,8 @@ const Index = () => {
       <header className="bg-card shadow-sm border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <Heart className="text-primary-foreground" size={24} />
-              </div>
+            <div className="flex items-center space-x-4">
+              <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-10" />
               <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
             </div>
             <Button variant="outline">Quero me certificar</Button>
@@ -324,10 +322,8 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Heart className="text-primary-foreground" size={16} />
-                </div>
+              <div className="flex items-center space-x-3 mb-4">
+                <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-8" />
                 <span className="text-lg font-bold">Biofeedback PRO - Fredy Vinagre</span>
               </div>
               <p className="text-muted-foreground">
