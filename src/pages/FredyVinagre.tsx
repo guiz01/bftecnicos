@@ -117,10 +117,12 @@ const FredyVinagre = () => {
             </div>
             
             <div className="relative">
-              <div className="aspect-square bg-muted rounded-2xl flex items-center justify-center">
-                <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
-                  <Heart className="text-primary" size={64} />
-                </div>
+              <div className="aspect-square bg-muted rounded-2xl overflow-hidden">
+                <img 
+                  src="/images/perfil-fredy.jpg" 
+                  alt="Fredy Vinagre" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg">
                 <span className="font-semibold">20+ anos</span>
