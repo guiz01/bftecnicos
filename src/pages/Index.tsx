@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -184,52 +183,47 @@ const Index = () => {
             ) : (
               tecnicos.map((tecnico) => (
                 <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-                  <div className="flex items-center p-4">
+                  <div className="flex items-start p-4">
                     <div className="flex-shrink-0 mr-4">
                       <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center">
                         <Users className="text-primary" size={24} />
                       </div>
                     </div>
-                    <div className="flex-grow">
-                      <div className="flex items-center justify-between mb-3">
-                        <div>
-                          <CardTitle className="text-lg">{tecnico.name}</CardTitle>
-                          <CardDescription className="text-sm">{tecnico.title}</CardDescription>
-                        </div>
-                        {tecnico.specialty && (
-                          <Badge variant="secondary" className="text-xs">{tecnico.specialty}</Badge>
-                        )}
+                    <div className="flex-grow min-w-0">
+                      <div className="mb-3">
+                        <CardTitle className="text-lg truncate">{tecnico.name}</CardTitle>
+                        <CardDescription className="text-sm truncate">{tecnico.title}</CardDescription>
                       </div>
                       
                       <div className="space-y-2 text-sm text-muted-foreground">
                         {tecnico.location && (
-                          <div className="flex items-center">
-                            <MapPin className="w-3 h-3 mr-2" />
-                            <span>{tecnico.location}</span>
+                          <div className="flex items-start">
+                            <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.location}</span>
                           </div>
                         )}
                         {tecnico.email && (
-                          <div className="flex items-center">
-                            <Mail className="w-3 h-3 mr-2" />
-                            <span>{tecnico.email}</span>
+                          <div className="flex items-start">
+                            <Mail className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.email}</span>
                           </div>
                         )}
                         {tecnico.phone && (
-                          <div className="flex items-center">
-                            <Phone className="w-3 h-3 mr-2" />
-                            <span>{tecnico.phone}</span>
+                          <div className="flex items-start">
+                            <Phone className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.phone}</span>
                           </div>
                         )}
                         {tecnico.website && (
-                          <div className="flex items-center">
-                            <Globe className="w-3 h-3 mr-2" />
-                            <span>{tecnico.website}</span>
+                          <div className="flex items-start">
+                            <Globe className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.website}</span>
                           </div>
                         )}
                         {tecnico.social_media && (
-                          <div className="flex items-center">
-                            <ExternalLink className="w-3 h-3 mr-2" />
-                            <span>{tecnico.social_media}</span>
+                          <div className="flex items-start">
+                            <ExternalLink className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.social_media}</span>
                           </div>
                         )}
                       </div>
