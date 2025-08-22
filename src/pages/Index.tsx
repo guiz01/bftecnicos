@@ -168,6 +168,12 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               Profissionais qualificados e treinados pelo método Fredy Vinagre
             </p>
+            <Button 
+              className="mt-6" 
+              onClick={() => navigate('/')}
+            >
+              Encontrar Técnicos
+            </Button>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
