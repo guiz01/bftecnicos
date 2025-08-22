@@ -159,60 +159,82 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-6">
             {loading ? (
               Array.from({ length: 3 }).map((_, index) => (
                 <Card key={index} className="bg-card border-border">
-                  <CardHeader>
-                    <Skeleton className="w-16 h-16 rounded-full mb-4" />
-                    <Skeleton className="h-6 w-3/4 mb-2" />
-                    <Skeleton className="h-4 w-1/2" />
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-full" />
-                    <Skeleton className="h-4 w-full" />
-                    <div className="pt-4">
-                      <Skeleton className="h-6 w-24" />
+                  <div className="flex items-center p-6">
+                    <div className="flex-shrink-0 mr-6">
+                      <Skeleton className="w-20 h-20 rounded-full" />
                     </div>
-                  </CardContent>
+                    <div className="flex-grow">
+                      <div className="flex items-center mb-4">
+                        <Skeleton className="h-8 w-48 mr-4" />
+                        <Skeleton className="h-6 w-32" />
+                      </div>
+                      <div className="space-y-3">
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-full" />
+                      </div>
+                    </div>
+                  </div>
                 </Card>
               ))
             ) : (
               tecnicos.map((tecnico) => (
                 <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-                  <CardHeader>
-                    <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-                      <Users className="text-primary" size={24} />
+                  <div className="flex items-center p-6">
+                    <div className="flex-shrink-0 mr-6">
+                      <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center">
+                        <Users className="text-primary" size={32} />
+                      </div>
                     </div>
-                    <CardTitle>{tecnico.name}</CardTitle>
-                    <CardDescription>{tecnico.title}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {tecnico.location && <div className="flex items-center text-muted-foreground">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span>{tecnico.location}</span>
-                    </div>}
-                    {tecnico.email && <div className="flex items-center text-muted-foreground">
-                      <Mail className="w-4 h-4 mr-2" />
-                      <span>{tecnico.email}</span>
-                    </div>}
-                    {tecnico.phone && <div className="flex items-center text-muted-foreground">
-                      <Phone className="w-4 h-4 mr-2" />
-                      <span>{tecnico.phone}</span>
-                    </div>}
-                    {tecnico.website && <div className="flex items-center text-muted-foreground">
-                      <Globe className="w-4 h-4 mr-2" />
-                      <span>{tecnico.website}</span>
-                    </div>}
-                    {tecnico.social_media && <div className="flex items-center text-muted-foreground">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      <span>{tecnico.social_media}</span>
-                    </div>}
-                    {tecnico.specialty && <div className="pt-4">
-                      <Badge variant="secondary">{tecnico.specialty}</Badge>
-                    </div>}
-                  </CardContent>
+                    <div className="flex-grow">
+                      <div className="flex items-center justify-between mb-4">
+                        <div>
+                          <CardTitle className="text-xl">{tecnico.name}</CardTitle>
+                          <CardDescription>{tecnico.title}</CardDescription>
+                        </div>
+                        {tecnico.specialty && (
+                          <Badge variant="secondary">{tecnico.specialty}</Badge>
+                        )}
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-4 text-muted-foreground">
+                        {tecnico.location && (
+                          <div className="flex items-center">
+                            <MapPin className="w-4 h-4 mr-2" />
+                            <span>{tecnico.location}</span>
+                          </div>
+                        )}
+                        {tecnico.email && (
+                          <div className="flex items-center">
+                            <Mail className="w-4 h-4 mr-2" />
+                            <span>{tecnico.email}</span>
+                          </div>
+                        )}
+                        {tecnico.phone && (
+                          <div className="flex items-center">
+                            <Phone className="w-4 h-4 mr-2" />
+                            <span>{tecnico.phone}</span>
+                          </div>
+                        )}
+                        {tecnico.website && (
+                          <div className="flex items-center">
+                            <Globe className="w-4 h-4 mr-2" />
+                            <span>{tecnico.website}</span>
+                          </div>
+                        )}
+                        {tecnico.social_media && (
+                          <div className="flex items-center">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            <span>{tecnico.social_media}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </Card>
               ))
             )}
