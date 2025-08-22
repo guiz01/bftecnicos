@@ -1,7 +1,6 @@
 "use client";
 
 import { useNavigate } from "react-router-dom";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin } from "lucide-react";
@@ -353,10 +352,6 @@ const FredyVinagre = () => {
                 <li>São Paulo, SP</li>
               </ul>
             </div>
-          </div>
-          
-          <div className="border-t border-border pt-8 text-center text-muted-foreground">
-            <MadeWithDyad />
           </div>
         </div>
       </footer>
