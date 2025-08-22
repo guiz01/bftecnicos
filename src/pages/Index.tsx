@@ -6,7 +6,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award, Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import MobileMenu from "@/components/mobile-menu";
 
@@ -24,7 +25,9 @@ interface Tecnico {
 
 const Index = () => {
   const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
+  const [filteredTecnicos, setFilteredTecnicos] = useState<Tecnico[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -38,12 +41,29 @@ const Index = () => {
         console.error("Error fetching tecnicos:", error);
       } else if (data) {
         setTecnicos(data);
+        setFilteredTecnicos(data);
       }
       setLoading(false);
     };
 
     fetchTecnicos();
   }, []);
+
+  useEffect(() => {
+    if (searchTerm === "") {
+      setFilteredTecnicos(tecnicos);
+    } else {
+      const filtered = tecnicos.filter(tecnico => 
+        tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredTecnicos(filtered);
+    }
+  }, [searchTerm, tecnicos]);
 
   const scrollToTecnicos = () => {
     const element = document.getElementById('tecnicos-section');
@@ -182,6 +202,25 @@ const Index = () => {
               Encontrar Técnicos
             </Button>
           </div>
+
+          {/* Barra de Busca */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+              <Input
+                type="text"
+                placeholder="Buscar por nome, especialidade, localização..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-12 pr-4 py-3 text-lg"
+              />
+            </div>
+            {searchTerm && (
+              <p className="text-center text-muted-foreground mt-4">
+                Encontrados {filteredTecnicos.length} técnico(s) para "{searchTerm}"
+              </p>
+            )}
+          </div>
           
           <div className="grid md:grid-cols-3 gap-6">
             {loading ? (
@@ -205,8 +244,8 @@ const Index = () => {
                   </div>
                 </Card>
               ))
-            ) : (
-              tecnicos.map((tecnico) => (
+            ) : filteredTecnicos.length > 0 ? (
+              filteredTecnicos.map((tecnico) => (
                 <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
                   <div className="flex items-start p-4">
                     <div className="flex-shrink-0 mr-4">
@@ -256,6 +295,17 @@ const Index = () => {
                   </div>
                 </Card>
               ))
+            ) : (
+              <div className="col-span-3 text-center py-12">
+                <Users className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Nenhum técnico encontrado</h3>
+                <p className="text-muted-foreground">
+                  {searchTerm 
+                    ? `Nenhum técnico encontrado para "${searchTerm}". Tente buscar por outros termos.`
+                    : "Ainda não há técnicos cadastrados no sistema."
+                  }
+                </p>
+              </div>
             )}
           </div>
         </div>
