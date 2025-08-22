@@ -100,7 +100,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">O que é Biofeedback?</h2>
             <p className="text-lg text-muted-foreground">
-              O método Biofredy é uma técnica avançada que utiliza feedback biológico para ajudar 
+              O método Biofeedback é uma técnica avançada que utiliza feedback biológico para ajudar 
               as pessoas a controlar funções fisiológicas e melhorar sua saúde e bem-estar.
             </p>
           </div>
@@ -240,9 +240,9 @@ const Index = () => {
       <section className="py-20 px-4 bg-card">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Benefícios do Biofredy</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Benefícios do Biofeedback</h2>
             <p className="text-lg text-muted-foreground">
-              Descubra como o método Biofredy pode transformar sua saúde
+              Descubra como o método Biofeedback pode transformar sua saúde
             </p>
           </div>
           
@@ -344,7 +344,7 @@ const Index = () => {
                 <span className="text-lg font-bold">Biofeedback PRO - Fredy Vinagre</span>
               </div>
               <p className="text-muted-foreground">
-                Método Biofredy - Técnicos Certificados
+                Método Biofeedback - Técnicos Certificados
               </p>
             </div>
             
