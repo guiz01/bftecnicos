@@ -26,7 +26,7 @@ const FredyVinagre = () => {
               </button>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <Button>Encontrar Técnicos</Button>
+              <Button onClick={() => navigate('/')}>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
               <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
                 Quem é Fredy Vinagre
@@ -254,8 +254,8 @@ const FredyVinagre = () => {
             Conheça o método Fredy Vinagre e comece sua jornada de bem-estar
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary">
-              Agendar Consulta
+            <Button size="lg" variant="secondary" onClick={() => navigate('/')}>
+              Encontrar Técnicos
             </Button>
             <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
               Quero me certificar
