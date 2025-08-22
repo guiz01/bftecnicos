@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,6 +24,7 @@ interface Tecnico {
 const Index = () => {
   const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTecnicos = async () => {
@@ -55,6 +57,9 @@ const Index = () => {
             <div className="flex items-center space-x-4">
               <Button>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
+              <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
+                Quem é Fredy
+              </Button>
             </div>
           </div>
         </div>
