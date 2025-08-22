@@ -45,6 +45,13 @@ const Index = () => {
     fetchTecnicos();
   }, []);
 
+  const scrollToTecnicos = () => {
+    const element = document.getElementById('tecnicos-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -61,13 +68,13 @@ const Index = () => {
               </button>
             </div>
             <div className="hidden md:flex items-center space-x-4">
-              <Button onClick={() => navigate('/')}>Encontrar Técnicos</Button>
+              <Button onClick={scrollToTecnicos}>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
               <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
                 Quem é Fredy Vinagre
               </Button>
             </div>
-            <MobileMenu onNavigate={navigate} />
+            <MobileMenu onNavigate={navigate} onScrollToTecnicos={scrollToTecnicos} />
           </div>
         </div>
       </header>
@@ -96,7 +103,7 @@ const Index = () => {
             para tratamento de saúde e bem-estar.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6" onClick={() => navigate('/')}>
+            <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToTecnicos}>
               Encontrar Técnicos
             </Button>
             <Button size="lg" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
@@ -161,7 +168,7 @@ const Index = () => {
       </section>
 
       {/* Técnicos Certificados */}
-      <section className="py-20 px-4 bg-background">
+      <section id="tecnicos-section" className="py-20 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Técnicos Certificados</h2>
@@ -170,7 +177,7 @@ const Index = () => {
             </p>
             <Button 
               className="mt-6" 
-              onClick={() => navigate('/')}
+              onClick={scrollToTecnicos}
             >
               Encontrar Técnicos
             </Button>
@@ -342,7 +349,7 @@ const Index = () => {
             Encontre um técnico certificado e comece sua jornada de bem-estar
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" onClick={() => navigate('/')}>
+            <Button size="lg" variant="secondary" onClick={scrollToTecnicos}>
               Encontrar Técnicos
             </Button>
             <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>

@@ -6,15 +6,16 @@ import { Menu, X } from "lucide-react";
 
 interface MobileMenuProps {
   onNavigate: (path: string) => void;
+  onScrollToTecnicos: () => void;
 }
 
-const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
+const MobileMenu = ({ onNavigate, onScrollToTecnicos }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Encontrar Técnicos", path: "/" },
-    { label: "Quero me certificar", path: "/" },
-    { label: "Quem é Fredy Vinagre", path: "/fredy-vinagre" },
+    { label: "Encontrar Técnicos", action: onScrollToTecnicos },
+    { label: "Quero me certificar", action: () => onNavigate('/') },
+    { label: "Quem é Fredy Vinagre", action: () => onNavigate('/fredy-vinagre') },
   ];
 
   return (
@@ -37,7 +38,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
                 variant="ghost"
                 className="w-full justify-start"
                 onClick={() => {
-                  onNavigate(item.path);
+                  item.action();
                   setIsOpen(false);
                 }}
               >
