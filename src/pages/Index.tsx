@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import TecnicosMap from "@/components/TecnicosMap"; // Import the new map component
 
 interface Tecnico {
   id: string;
@@ -20,8 +19,6 @@ interface Tecnico {
   website: string;
   social_media: string;
   specialty: string;
-  latitude?: number; // Added latitude
-  longitude?: number; // Added longitude
 }
 
 const Index = () => {
@@ -149,15 +146,6 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Map Section */}
-          <div className="mb-12">
-            {loading ? (
-              <Skeleton className="w-full h-[500px] rounded-lg" />
-            ) : (
-              <TecnicosMap tecnicos={tecnicos} />
-            )}
-          </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {loading ? (
               Array.from({ length: 3 }).map((_, index) => (
