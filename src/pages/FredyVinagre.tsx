@@ -1,25 +1,33 @@
 "use client";
 
+import { useNavigate } from "react-router-dom";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin } from "lucide-react";
+import MobileMenu from "@/components/mobile-menu";
 
 const FredyVinagre = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border">
+      <header className="bg-card shadow-sm border-b border-border relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
               <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-4">
               <Button>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
+              <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
+                Quem é Fredy Vinagre
+              </Button>
             </div>
+            <MobileMenu onNavigate={navigate} />
           </div>
         </div>
       </header>
