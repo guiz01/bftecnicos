@@ -87,7 +87,7 @@ const Index = () => {
             <Button size="lg" className="text-lg px-8 py-6">
               Encontrar Técnicos
             </Button>
-            <Button size="lg" className="text-lg px-8 py-6 text-white hover:bg-white hover:text-primary">
+            <Button size="lg" className="text-lg px-8 py-6 text-white border-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
               Quero me certificar
             </Button>
           </div>
@@ -327,7 +327,7 @@ const Index = () => {
             <Button size="lg" variant="secondary">
               Encontrar Técnicos
             </Button>
-            <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
               Quero me certificar
             </Button>
           </div>
