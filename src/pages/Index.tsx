@@ -14,10 +14,13 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-10" />
+              <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
               <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
             </div>
-            <Button variant="outline">Quero me certificar</Button>
+            <div className="flex items-center space-x-4">
+              <Button>Encontrar Técnicos</Button>
+              <Button variant="outline">Quero me certificar</Button>
+            </div>
           </div>
         </div>
       </header>
