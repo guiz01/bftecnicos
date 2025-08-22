@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'; // Removendo MapContainerProps e TileLayerProps
+import { MapContainer, TileLayer, Marker, Popup, MapContainerProps, TileLayerProps } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -34,13 +34,24 @@ const TecnicosMap: React.FC<TecnicosMapProps> = ({ tecnicos }) => {
   const defaultCenter: [number, number] = [-14.235, -53.1328]; // Center of Brazil
   const defaultZoom = 4;
 
+  // Definindo explicitamente as props para MapContainer
+  const mapContainerProps: MapContainerProps = {
+    center: defaultCenter,
+    zoom: defaultZoom,
+    scrollWheelZoom: false,
+    className: "w-full h-full"
+  };
+
+  // Definindo explicitamente as props para TileLayer
+  const tileLayerProps: TileLayerProps = {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  };
+
   return (
     <div className="w-full h-[500px] rounded-lg overflow-hidden shadow-lg border border-border">
-      <MapContainer center={defaultCenter} zoom={defaultZoom} scrollWheelZoom={false} className="w-full h-full">
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+      <MapContainer {...mapContainerProps}>
+        <TileLayer {...tileLayerProps} />
         {tecnicos.map((tecnico) => (
           tecnico.latitude && tecnico.longitude ? (
             <Marker key={tecnico.id} position={[tecnico.latitude, tecnico.longitude]}>
