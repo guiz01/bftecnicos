@@ -59,7 +59,7 @@ const Index = () => {
               <Button>Encontrar Técnicos</Button>
               <Button variant="outline">Quero me certificar</Button>
               <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
-                Quem é Fredy
+                Quem é Fredy Vinagre
               </Button>
             </div>
             <MobileMenu onNavigate={navigate} />

@@ -14,7 +14,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
   const menuItems = [
     { label: "Encontrar Técnicos", path: "/" },
     { label: "Quero me certificar", path: "/" },
-    { label: "Quem é Fredy", path: "/fredy-vinagre" },
+    { label: "Quem é Fredy Vinagre", path: "/fredy-vinagre" },
   ];
 
   return (
