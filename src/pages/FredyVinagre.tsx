@@ -17,8 +17,13 @@ const FredyVinagre = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
-              <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
+              <button 
+                onClick={() => navigate('/')}
+                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+              >
+                <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
+                <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
+              </button>
             </div>
             <div className="hidden md:flex items-center space-x-4">
               <Button>Encontrar Técnicos</Button>
