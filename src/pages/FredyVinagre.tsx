@@ -135,7 +135,7 @@ const FredyVinagre = () => {
 
       {/* Formação e Especializações */}
       <section className="py-20 px-4 bg-card">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Formação e Especializações</h2>
             <p className="text-lg text-muted-foreground">
@@ -143,7 +143,8 @@ const FredyVinagre = () => {
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Educação */}
             <Card className="bg-background border-border">
               <CardHeader>
                 <div className="flex items-center space-x-3">
@@ -164,6 +165,24 @@ const FredyVinagre = () => {
               </CardContent>
             </Card>
             
+            {/* Foto de Certificado */}
+            <div className="bg-background border border-border rounded-2xl p-6">
+              <div className="aspect-[3/4] bg-muted rounded-xl overflow-hidden">
+                <img 
+                  src="/images/certificado.jpg" 
+                  alt="Certificado de Biofeedback" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <h3 className="font-semibold text-foreground mb-2">Certificado BCIA</h3>
+                <p className="text-sm text-muted-foreground">
+                  Biofeedback Certified Associate International
+                </p>
+              </div>
+            </div>
+            
+            {/* Certificações */}
             <Card className="bg-background border-border">
               <CardHeader>
                 <div className="flex items-center space-x-3">
@@ -184,6 +203,7 @@ const FredyVinagre = () => {
               </CardContent>
             </Card>
             
+            {/* Atuação Internacional */}
             <Card className="bg-background border-border">
               <CardHeader>
                 <div className="flex items-center space-x-3">
