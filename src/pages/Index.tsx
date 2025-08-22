@@ -119,8 +119,7 @@ const Index = () => {
             Técnicos Certificados em Biofeedback
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Encontre profissionais qualificados e certificados pelo método Fredy Vinagre de Biofeedback
-            para tratamento de saúde e bem-estar.
+            Encontre profissionais qualificados e certificados pelo método Biofeedback PRO de Fredy Vinagre para tratamento de saúde e bem-estar.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToTecnicos}>
