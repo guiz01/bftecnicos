@@ -159,23 +159,23 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {loading ? (
               Array.from({ length: 3 }).map((_, index) => (
                 <Card key={index} className="bg-card border-border">
-                  <div className="flex items-center p-6">
-                    <div className="flex-shrink-0 mr-6">
-                      <Skeleton className="w-20 h-20 rounded-full" />
+                  <div className="flex items-center p-4">
+                    <div className="flex-shrink-0 mr-4">
+                      <Skeleton className="w-16 h-16 rounded-full" />
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center mb-4">
-                        <Skeleton className="h-8 w-48 mr-4" />
-                        <Skeleton className="h-6 w-32" />
+                      <div className="flex items-center mb-3">
+                        <Skeleton className="h-6 w-32 mr-3" />
+                        <Skeleton className="h-4 w-20" />
                       </div>
-                      <div className="space-y-3">
-                        <Skeleton className="h-4 w-full" />
-                        <Skeleton className="h-4 w-full" />
-                        <Skeleton className="h-4 w-full" />
+                      <div className="space-y-2">
+                        <Skeleton className="h-3 w-full" />
+                        <Skeleton className="h-3 w-full" />
+                        <Skeleton className="h-3 w-full" />
                       </div>
                     </div>
                   </div>
@@ -184,51 +184,51 @@ const Index = () => {
             ) : (
               tecnicos.map((tecnico) => (
                 <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-                  <div className="flex items-center p-6">
-                    <div className="flex-shrink-0 mr-6">
-                      <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center">
-                        <Users className="text-primary" size={32} />
+                  <div className="flex items-center p-4">
+                    <div className="flex-shrink-0 mr-4">
+                      <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center">
+                        <Users className="text-primary" size={24} />
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center justify-between mb-3">
                         <div>
-                          <CardTitle className="text-xl">{tecnico.name}</CardTitle>
-                          <CardDescription>{tecnico.title}</CardDescription>
+                          <CardTitle className="text-lg">{tecnico.name}</CardTitle>
+                          <CardDescription className="text-sm">{tecnico.title}</CardDescription>
                         </div>
                         {tecnico.specialty && (
-                          <Badge variant="secondary">{tecnico.specialty}</Badge>
+                          <Badge variant="secondary" className="text-xs">{tecnico.specialty}</Badge>
                         )}
                       </div>
                       
-                      <div className="grid md:grid-cols-2 gap-4 text-muted-foreground">
+                      <div className="space-y-2 text-sm text-muted-foreground">
                         {tecnico.location && (
                           <div className="flex items-center">
-                            <MapPin className="w-4 h-4 mr-2" />
+                            <MapPin className="w-3 h-3 mr-2" />
                             <span>{tecnico.location}</span>
                           </div>
                         )}
                         {tecnico.email && (
                           <div className="flex items-center">
-                            <Mail className="w-4 h-4 mr-2" />
+                            <Mail className="w-3 h-3 mr-2" />
                             <span>{tecnico.email}</span>
                           </div>
                         )}
                         {tecnico.phone && (
                           <div className="flex items-center">
-                            <Phone className="w-4 h-4 mr-2" />
+                            <Phone className="w-3 h-3 mr-2" />
                             <span>{tecnico.phone}</span>
                           </div>
                         )}
                         {tecnico.website && (
                           <div className="flex items-center">
-                            <Globe className="w-4 h-4 mr-2" />
+                            <Globe className="w-3 h-3 mr-2" />
                             <span>{tecnico.website}</span>
                           </div>
                         )}
                         {tecnico.social_media && (
                           <div className="flex items-center">
-                            <ExternalLink className="w-4 h-4 mr-2" />
+                            <ExternalLink className="w-3 h-3 mr-2" />
                             <span>{tecnico.social_media}</span>
                           </div>
                         )}
