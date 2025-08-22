@@ -195,12 +195,6 @@ const Index = () => {
             <p className="text-lg text-muted-foreground">
               Profissionais qualificados e treinados pelo método Fredy Vinagre
             </p>
-            <Button 
-              className="mt-6" 
-              onClick={scrollToTecnicos}
-            >
-              Encontrar Técnicos
-            </Button>
           </div>
 
           {/* Barra de Busca */}
