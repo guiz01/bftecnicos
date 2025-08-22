@@ -61,8 +61,8 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 relative">
+      {/* Hero Section - Full Page */}
+      <section className="min-h-screen flex items-center justify-center px-4 relative">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -73,22 +73,22 @@ const Index = () => {
             backgroundAttachment: "fixed"
           }}
         >
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
         
-        <div className="relative max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-6">
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-8 leading-tight">
             Técnicos Certificados em Biofeedback
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
             Encontre profissionais qualificados e certificados pelo método Fredy Vinagre de Biofeedback
             para tratamento de saúde e bem-estar.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="lg" className="text-lg px-8 py-6">
               Encontrar Técnicos
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
               Sobre o Método
             </Button>
           </div>
