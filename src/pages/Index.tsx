@@ -17,7 +17,7 @@ const Index = () => {
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Heart className="text-white" size={24} />
               </div>
-              <span className="text-xl font-bold text-gray-900">Fredy Vinagre Biofeedback</span>
+              <span className="text-xl font-bold text-gray-900">Biofeedback PRO - Fredy Vinagre</span>
             </div>
             <Button variant="outline">Quero me certificar</Button>
           </div>
@@ -328,7 +328,7 @@ const Index = () => {
                 <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                   <Heart className="text-white" size={16} />
                 </div>
-                <span className="text-lg font-bold">Fredy Vinagre</span>
+                <span className="text-lg font-bold">Biofeedback PRO - Fredy Vinagre</span>
               </div>
               <p className="text-gray-400">
                 Método Biofredy - Técnicos Certificados
