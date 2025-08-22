@@ -207,11 +207,11 @@ const FredyVinagre = () => {
         </div>
       </section>
 
-      {/* Método Fredy Vinagre */}
+      {/* Método Biofeedback PRO */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">O Método Fredy Vinagre</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">O Método Biofeedback PRO</h2>
             <p className="text-lg text-muted-foreground">
               Uma abordagem única e inovadora no tratamento com Biofeedback
             </p>
