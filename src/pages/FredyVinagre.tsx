@@ -44,9 +44,22 @@ const FredyVinagre = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero Section - Full Page */}
+      <section className="min-h-screen flex items-center justify-center px-4 relative">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/background2.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed"
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             Fredy Vinagre
           </h1>
@@ -65,7 +78,7 @@ const FredyVinagre = () => {
       </section>
 
       {/* Sobre Fredy */}
-      <section className="py-20 px-4">
+      <section id="tecnicos-section" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Quem é o Fredy Vinagre?</h2>
