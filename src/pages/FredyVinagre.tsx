@@ -144,85 +144,90 @@ const FredyVinagre = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Educação */}
-            <Card className="bg-background border-border">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <BookOpen className="w-8 h-8 text-primary" />
-                  <div>
-                    <CardTitle>Educação</CardTitle>
-                    <CardDescription>Formação acadêmica completa</CardDescription>
+            {/* Especificações do lado esquerdo */}
+            <div className="space-y-6">
+              {/* Educação */}
+              <Card className="bg-background border-border">
+                <CardHeader>
+                  <div className="flex items-center space-x-3">
+                    <BookOpen className="w-8 h-8 text-primary" />
+                    <div>
+                      <CardTitle>Educação</CardTitle>
+                      <CardDescription>Formação acadêmica completa</CardDescription>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• Graduação em Psicologia pela Universidade de São Paulo</li>
-                  <li>• Especialização em Biofeedback Clínico pelo Biofeedback Institute of America</li>
-                  <li>• Mestrado em Neurociências pela Universidade Federal de São Paulo</li>
-                  <li>• Doutorado em Psicofisiologia pela Universidade de São Paulo</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            {/* Foto de Certificado */}
-            <div className="bg-background border border-border rounded-2xl p-6">
-              <div className="aspect-[3/4] bg-muted rounded-xl overflow-hidden">
-                <img 
-                  src="/images/certificado.jpg" 
-                  alt="Certificado de Biofeedback" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="mt-4 text-center">
-                <h3 className="font-semibold text-foreground mb-2">Certificado BCIA</h3>
-                <p className="text-sm text-muted-foreground">
-                  Biofeedback Certified Associate International
-                </p>
-              </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li>• Graduação em Psicologia pela Universidade de São Paulo</li>
+                    <li>• Especialização em Biofeedback Clínico pelo Biofeedback Institute of America</li>
+                    <li>• Mestrado em Neurociências pela Universidade Federal de São Paulo</li>
+                    <li>• Doutorado em Psicofisiologia pela Universidade de São Paulo</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              {/* Certificações */}
+              <Card className="bg-background border-border">
+                <CardHeader>
+                  <div className="flex items-center space-x-3">
+                    <Award className="w-8 h-8 text-primary" />
+                    <div>
+                      <CardTitle>Certificações</CardTitle>
+                      <CardDescription>Qualificações profissionais</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li>• Certificado em Biofeedback Avançado (BCIA)</li>
+                    <li>• Especialista em Neurofeedback (BCIA)</li>
+                    <li>• Certificação em HRV (Variabilidade da Frequência Cardíaca)</li>
+                    <li>• Formador Internacional em Biofeedback</li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              {/* Atuação Internacional */}
+              <Card className="bg-background border-border">
+                <CardHeader>
+                  <div className="flex items-center space-x-3">
+                    <Globe className="w-8 h-8 text-primary" />
+                    <div>
+                      <CardTitle>Atuação Internacional</CardTitle>
+                      <CardDescription>Experiência global</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li>• Palestrante em congressos internacionais de Biofeedback</li>
+                    <li>• Consultor para centros de saúde na Europa e América Latina</li>
+                    <li>• Pesquisador colaborador em projetos internacionais</li>
+                    <li>• Autor de artigos científicos publicados em revistas internacionais</li>
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
             
-            {/* Certificações */}
-            <Card className="bg-background border-border">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <Award className="w-8 h-8 text-primary" />
-                  <div>
-                    <CardTitle>Certificações</CardTitle>
-                    <CardDescription>Qualificações profissionais</CardDescription>
-                  </div>
+            {/* Certificado do lado direito */}
+            <div className="flex flex-col justify-center">
+              <div className="bg-background border border-border rounded-2xl p-6">
+                <div className="aspect-[3/4] bg-muted rounded-xl overflow-hidden">
+                  <img 
+                    src="/images/certificado.jpg" 
+                    alt="Certificado de Biofeedback" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• Certificado em Biofeedback Avançado (BCIA)</li>
-                  <li>• Especialista em Neurofeedback (BCIA)</li>
-                  <li>• Certificação em HRV (Variabilidade da Frequência Cardíaca)</li>
-                  <li>• Formador Internacional em Biofeedback</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            {/* Atuação Internacional */}
-            <Card className="bg-background border-border">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <Globe className="w-8 h-8 text-primary" />
-                  <div>
-                    <CardTitle>Atuação Internacional</CardTitle>
-                    <CardDescription>Experiência global</CardDescription>
-                  </div>
+                <div className="mt-4 text-center">
+                  <h3 className="font-semibold text-foreground mb-2">Certificado BCIA</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Biofeedback Certified Associate International
+                  </p>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li>• Palestrante em congressos internacionais de Biofeedback</li>
-                  <li>• Consultor para centros de saúde na Europa e América Latina</li>
-                  <li>• Pesquisador colaborador em projetos internacionais</li>
-                  <li>• Autor de artigos científicos publicados em revistas internacionais</li>
-                </ul>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
