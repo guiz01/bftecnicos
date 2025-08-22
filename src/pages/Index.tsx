@@ -1,12 +1,48 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
+
+interface Tecnico {
+  id: string;
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  phone: string;
+  website: string;
+  social_media: string;
+  specialty: string;
+}
 
 const Index = () => {
+  const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTecnicos = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('tecnicos')
+        .select('*');
+
+      if (error) {
+        console.error("Error fetching tecnicos:", error);
+      } else if (data) {
+        setTecnicos(data);
+      }
+      setLoading(false);
+    };
+
+    fetchTecnicos();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -111,113 +147,62 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Técnico 1 */}
-            <Card className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Users className="text-primary" size={24} />
-                </div>
-                <CardTitle>Dr. Ana Silva</CardTitle>
-                <CardDescription>Técnica Certificada</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  <span>São Paulo, SP</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Mail className="w-4 h-4 mr-2" />
-                  <span>ana.silva@biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span>(11) 9999-8888</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Globe className="w-4 h-4 mr-2" />
-                  <span>www.ana-silva-biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  <span>@ana_silva_biofredy</span>
-                </div>
-                <div className="pt-4">
-                  <Badge variant="secondary">Especialista em Stress</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Técnico 2 */}
-            <Card className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Users className="text-primary" size={24} />
-                </div>
-                <CardTitle>Carlos Mendes</CardTitle>
-                <CardDescription>Técnico Certificado</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  <span>Rio de Janeiro, RJ</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Mail className="w-4 h-4 mr-2" />
-                  <span>carlos.mendes@biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span>(21) 9999-7777</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Globe className="w-4 h-4 mr-2" />
-                  <span>www.carlos-mendes-biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  <span>@carlos_biofredy</span>
-                </div>
-                <div className="pt-4">
-                  <Badge variant="secondary">Foco em Dor Crônica</Badge>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Técnico 3 */}
-            <Card className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
-              <CardHeader>
-                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-                  <Users className="text-primary" size={24} />
-                </div>
-                <CardTitle>Maria Oliveira</CardTitle>
-                <CardDescription>Técnica Certificada</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  <span>Belo Horizonte, MG</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Mail className="w-4 h-4 mr-2" />
-                  <span>maria.oliveira@biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Phone className="w-4 h-4 mr-2" />
-                  <span>(31) 9999-6666</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <Globe className="w-4 h-4 mr-2" />
-                  <span>www.maria-oliveira-biofredy.com</span>
-                </div>
-                <div className="flex items-center text-muted-foreground">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  <span>@maria_biofredy</span>
-                </div>
-                <div className="pt-4">
-                  <Badge variant="secondary">Ansiedade e Depressão</Badge>
-                </div>
-              </CardContent>
-            </Card>
+            {loading ? (
+              Array.from({ length: 3 }).map((_, index) => (
+                <Card key={index} className="bg-card border-border">
+                  <CardHeader>
+                    <Skeleton className="w-16 h-16 rounded-full mb-4" />
+                    <Skeleton className="h-6 w-3/4 mb-2" />
+                    <Skeleton className="h-4 w-1/2" />
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                    <div className="pt-4">
+                      <Skeleton className="h-6 w-24" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              tecnicos.map((tecnico) => (
+                <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
+                      <Users className="text-primary" size={24} />
+                    </div>
+                    <CardTitle>{tecnico.name}</CardTitle>
+                    <CardDescription>{tecnico.title}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {tecnico.location && <div className="flex items-center text-muted-foreground">
+                      <MapPin className="w-4 h-4 mr-2" />
+                      <span>{tecnico.location}</span>
+                    </div>}
+                    {tecnico.email && <div className="flex items-center text-muted-foreground">
+                      <Mail className="w-4 h-4 mr-2" />
+                      <span>{tecnico.email}</span>
+                    </div>}
+                    {tecnico.phone && <div className="flex items-center text-muted-foreground">
+                      <Phone className="w-4 h-4 mr-2" />
+                      <span>{tecnico.phone}</span>
+                    </div>}
+                    {tecnico.website && <div className="flex items-center text-muted-foreground">
+                      <Globe className="w-4 h-4 mr-2" />
+                      <span>{tecnico.website}</span>
+                    </div>}
+                    {tecnico.social_media && <div className="flex items-center text-muted-foreground">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      <span>{tecnico.social_media}</span>
+                    </div>}
+                    {tecnico.specialty && <div className="pt-4">
+                      <Badge variant="secondary">{tecnico.specialty}</Badge>
+                    </div>}
+                  </CardContent>
+                </Card>
+              ))
+            )}
           </div>
         </div>
       </section>
