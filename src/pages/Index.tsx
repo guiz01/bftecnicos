@@ -105,9 +105,6 @@ const Index = () => {
 
   const formatSocialMediaUrl = (url: string) => {
     if (!url) return '';
-    if (url.startsWith('http://') || url.startsWith('https://')) {
-      return url;
-    }
     if (url.startsWith('instagram.com/')) {
       return `https://instagram.com/${url.replace('instagram.com/', '')}`;
     }
@@ -162,7 +159,7 @@ const Index = () => {
             Biofeedback PRO
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
-            Encontre os melhores técnicos certificados em Biofeedback e Neurofeedback.
+            Encontre profissionais qualificados e certificados pelo método Biofeedback PRO de Fredy Vinagre para tratamento de saúde e bem-estar.
           </p>
           <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToTecnicos}>
             Encontrar Técnicos
