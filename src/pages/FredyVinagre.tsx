@@ -236,7 +236,7 @@ const FredyVinagre = () => {
                 </div>
                 
                 {/* Card de contatos destacado */}
-                <div className="absolute -bottom-6 left-0 right-0 bg-primary text-primary-foreground rounded-lg shadow-lg p-4">
+                <div className="absolute -bottom-6 left-0 right-0 bg-card text-foreground rounded-lg shadow-lg p-4">
                   <h4 className="font-semibold text-center mb-3">Contacto</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center space-x-2">
