@@ -126,7 +126,7 @@ const Index = () => {
                 className="flex items-start space-x-2 hover:opacity-80 transition-opacity"
               >
                 <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
-                <div className="flex flex-col">
+                <div className="flex flex-col text-left">
                   <span className="text-xl font-bold text-foreground">Biofeedback PRO</span>
                   <span className="text-sm text-muted-foreground">by Fredy Vinagre</span>
                 </div>
