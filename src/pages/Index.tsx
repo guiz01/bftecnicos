@@ -92,6 +92,25 @@ const Index = () => {
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
   const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
+  const formatWebsiteUrl = (url: string) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    return `https://${url}`;
+  };
+
+  const formatSocialMediaUrl = (url: string) => {
+    if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
+    if (url.startsWith('instagram.com/')) {
+      return `https://instagram.com/${url.replace('instagram.com/', '')}`;
+    }
+    return `https://${url}`;
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -312,7 +331,7 @@ const Index = () => {
                           <div className="flex items-start">
                             <Globe className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                             <a 
-                              href={tecnico.website}
+                              href={formatWebsiteUrl(tecnico.website)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-primary hover:underline truncate"
@@ -325,7 +344,7 @@ const Index = () => {
                           <div className="flex items-start">
                             <ExternalLink className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
                             <a 
-                              href={tecnico.social_media}
+                              href={formatSocialMediaUrl(tecnico.social_media)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-primary hover:underline truncate"
