@@ -83,7 +83,7 @@ const FredyVinagre = () => {
 
       {/* Sobre Fredy */}
       <section id="tecnicos-section" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Quem é o Fredy Vinagre?</h2>
             <p className="text-lg text-muted-foreground">
@@ -91,35 +91,48 @@ const FredyVinagre = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Fredy Vinagre formou-se em Comunicação Social pela Universidade Autónoma de Lisboa. Foi jornalista durante vários anos, tendo trabalhado em publicações como a Exame. Fez parte da equipa fundadora do jornal Meios&amp;Publicidade, publicação que mais tarde dirigiu.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Foi ainda responsável pelo lançamento em Portugal da JustLeader uma revista na área da gestão de recursos humanos. Foi também o autor e "inventor" do projecto editorial BoasNotícias, um site de informação cujo critério editorial era simples: só eram publicadas as boas notícias de Portugal e do mundo.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Em 2007 abandona o jornalismo para se dedicar a tempo inteiro à área terapêutica. Torna-se técnico de Biofeedback, uma terapia que ficou conhecida em Portugal como terapia quântica. E é na sequência da terapia quântica que lança o livro "Ser Feliz Custa Tão Pouco", uma vez que ele reúne todas as práticas e conselhos que o autor dá nas suas sessões terapêuticas.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Em 2018 torna-se Biofeedback Specialist certificado pela BANHS – The Board of Advanced Natural Health Sciences. No mesmo ano integra a Clínica Dr. Pinto Coelho trabalhando com uma excelente equipa em cuidados de saúde.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                É formador internacional de Biofeedback, tendo participado nos últimos anos nos congressos mundiais de Las Vegas e de Budapeste como orador. Corre o mundo a fazer uma das suas paixões: ensinar. Ensinar a ajudar.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Desde 2022 que se tornou naturopata com cédula profissional nº C-002770 emitida pela Administração Central do Sistema da Saúde do Ministério da Saúde de Portugal.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Um ano depois abre a sua própria clínica, a Clínica de Biofeedback by Fredy Vinagre – Serviços de Naturopatia.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Ainda em 2023 torna-se formador certificado pela Mandelay Kfc.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Em Julho de 2025 passa a ser Representante Oficial da Mandelay em Portugal na venda dos equipamentos e respectiva formação e certificação de novos alunos. No mesmo mês lança 7 ebooks na área da naturopatia, stress, exercícios práticos para a felicidade e dicas para desiquilibrios hormonais, não esquecendo um retrato muito detalhado sobre a Menopausa e os seus efeitos. E o futuro? Ainda agora tudo está a começar.
-              </p>
+          <div className="grid md:grid-cols-3 gap-12 items-start">
+            {/* Texto principal - 2/3 do espaço */}
+            <div className="md:col-span-2 space-y-6">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Formação e Carreira</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Fredy Vinagre formou-se em Comunicação Social pela Universidade Autónoma de Lisboa. Foi jornalista durante vários anos, tendo trabalhado em publicações como a Exame. Fez parte da equipa fundadora do jornal Meios&amp;Publicidade, publicação que mais tarde dirigiu.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Foi ainda responsável pelo lançamento em Portugal da JustLeader uma revista na área da gestão de recursos humanos. Foi também o autor e "inventor" do projecto editorial BoasNotícias, um site de informação cujo critério editorial era simples: só eram publicadas as boas notícias de Portugal e do mundo.
+                </p>
+              </div>
+
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Transição para o Biofeedback</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Em 2007 abandona o jornalismo para se dedicar a tempo inteiro à área terapêutica. Torna-se técnico de Biofeedback, uma terapia que ficou conhecida em Portugal como terapia quântica. E é na sequência da terapia quântica que lança o livro "Ser Feliz Custa Tão Pouco", uma vez que ele reúne todas as práticas e conselhos que o autor dá nas suas sessões terapêuticas.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Em 2018 torna-se Biofeedback Specialist certificado pela BANHS – The Board of Advanced Natural Health Sciences. No mesmo ano integra a Clínica Dr. Pinto Coelho trabalhando com uma excelente equipa em cuidados de saúde.
+                </p>
+              </div>
+
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-foreground mb-4">Atuação Internacional e Reconhecimento</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  É formador internacional de Biofeedback, tendo participado nos últimos anos nos congressos mundiais de Las Vegas e de Budapeste como orador. Corre o mundo a fazer uma das suas paixões: ensinar. Ensinar a ajudar.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Desde 2022 que se tornou naturopata com cédula profissional nº C-002770 emitida pela Administração Central do Sistema da Saúde do Ministério da Saúde de Portugal.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Um ano depois abre a sua própria clínica, a Clínica de Biofeedback by Fredy Vinagre – Serviços de Naturopatia.
+                </p>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Ainda em 2023 torna-se formador certificado pela Mandelay Kfc.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Em Julho de 2025 passa a ser Representante Oficial da Mandelay em Portugal na venda dos equipamentos e respectiva formação e certificação de novos alunos. No mesmo mês lança 7 ebooks na área da naturopatia, stress, exercícios práticos para a felicidade e dicas para desiquilibrios hormonais, não esquecendo um retrato muito detalhado sobre a Menopausa e os seus efeitos. E o futuro? Ainda agora tudo está a começar.
+                </p>
+              </div>
+
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
@@ -136,16 +149,17 @@ const FredyVinagre = () => {
               </div>
             </div>
             
+            {/* Imagem - 1/3 do espaço */}
             <div className="relative">
-              <div className="aspect-square bg-muted rounded-2xl overflow-hidden">
+              <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-lg">
                 <img 
                   src="/images/perfil-fredy.jpg" 
                   alt="Fredy Vinagre" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg">
-                <span className="font-semibold">20+ anos</span>
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-lg">
+                <span className="font-semibold text-lg">20+ anos</span>
                 <span className="text-sm block">de experiência</span>
               </div>
             </div>
