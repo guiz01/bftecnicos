@@ -33,6 +33,10 @@ const Index = () => {
   const tecnicosPerPage = 6;
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Biofeedback PRO - Técnicos Certificados | Fredy Vinagre";
+  }, []);
+
   const scrollToTecnicos = () => {
     const element = document.getElementById('tecnicos-section');
     if (element) {

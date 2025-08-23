@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,10 @@ import MobileMenu from "@/components/mobile-menu";
 
 const FredyVinagre = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Fredy Vinagre | Especialista em Biofeedback - Biofeedback PRO";
+  }, []);
 
   const scrollToTecnicos = () => {
     const element = document.getElementById('tecnicos-section');
