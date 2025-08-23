@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award, Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import MobileMenu from "@/components/mobile-menu";
 import Pagination from "@/components/pagination";
-import Footer from "@/components/Footer"; // Importando o novo componente Footer
+import Footer from "@/components/Footer";
+import Header from "@/components/Header"; // Importando o novo componente Header
 
 interface Tecnico {
   id: string;
@@ -26,6 +26,7 @@ interface Tecnico {
 
 const NotFound = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Adicionando useNavigate
 
   useEffect(() => {
     console.error(
@@ -90,6 +91,16 @@ const NotFound = () => {
     setCurrentPage(page);
   };
 
+  const handleScrollToTecnicos = () => {
+    navigate('/'); // Navigate to home page
+    setTimeout(() => {
+      const element = document.getElementById('tecnicos-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Small delay to allow page to render
+  };
+
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
   const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
@@ -116,29 +127,7 @@ const NotFound = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => window.location.href = '/'}
-                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
-              >
-                <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
-                <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
-              </button>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <Button onClick={() => window.location.href = '/'}>Encontrar Técnicos</Button>
-              <Button variant="outline">Quero me certificar</Button>
-              <Button variant="outline" onClick={() => window.location.href = '/fredy-vinagre'}>
-                Quem é Fredy Vinagre
-              </Button>
-            </div>
-            <MobileMenu onNavigate={(path) => window.location.href = path} onScrollToTecnicos={() => window.location.href = '/'} />
-          </div>
-        </div>
-      </header>
+      <Header onScrollToTecnicos={handleScrollToTecnicos} />
 
       {/* 404 Section */}
       <section className="min-h-screen flex items-center justify-center px-4">

@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, Search, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import MobileMenu from "@/components/mobile-menu";
 import Pagination from "@/components/pagination";
-import Footer from "@/components/Footer"; // Importando o novo componente Footer
+import Footer from "@/components/Footer";
+import Header from "@/components/Header"; // Importando o novo componente Header
 
 interface Tecnico {
   id: string;
@@ -82,11 +82,14 @@ const FredyVinagre = () => {
     setCurrentPage(page);
   };
 
-  const scrollToTecnicos = () => {
-    const element = document.getElementById('tecnicos-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleScrollToTecnicos = () => {
+    navigate('/'); // Navigate to home page
+    setTimeout(() => {
+      const element = document.getElementById('tecnicos-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100); // Small delay to allow page to render
   };
 
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
@@ -115,29 +118,7 @@ const FredyVinagre = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => navigate('/')}
-                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
-              >
-                <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
-                <span className="text-xl font-bold text-foreground">Biofeedback PRO - Fredy Vinagre</span>
-              </button>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <Button onClick={scrollToTecnicos}>Encontrar Técnicos</Button>
-              <Button variant="outline">Quero me certificar</Button>
-              <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
-                Quem é Fredy Vinagre
-              </Button>
-            </div>
-            <MobileMenu onNavigate={navigate} onScrollToTecnicos={scrollToTecnicos} />
-          </div>
-        </div>
-      </header>
+      <Header onScrollToTecnicos={handleScrollToTecnicos} />
 
       {/* Hero Section - Full Page */}
       <section className="min-h-screen flex items-center justify-center px-4 relative">
@@ -659,7 +640,7 @@ const FredyVinagre = () => {
             Conheça o método Fredy Vinagre e comece sua jornada de bem-estar
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" onClick={scrollToTecnicos}>
+            <Button size="lg" variant="secondary" onClick={handleScrollToTecnicos}>
               Encontrar Técnicos
             </Button>
             <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>

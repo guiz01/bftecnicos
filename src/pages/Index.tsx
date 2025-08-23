@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, Search, ExternalLink } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import MobileMenu from "@/components/mobile-menu";
 import Pagination from "@/components/pagination";
-import Footer from "@/components/Footer"; // Importando o novo componente Footer
+import Footer from "@/components/Footer";
+import Header from "@/components/Header"; // Importando o novo componente Header
 
 interface Tecnico {
   id: string;
@@ -115,32 +115,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-card shadow-sm border-b border-border relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <button 
-                onClick={() => navigate('/')}
-                className="flex items-start space-x-2 hover:opacity-80 transition-opacity"
-              >
-                <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
-                <div className="flex flex-col text-left">
-                  <span className="text-xl font-bold text-foreground">Biofeedback PRO</span>
-                  <span className="text-sm text-muted-foreground">by Fredy Vinagre</span>
-                </div>
-              </button>
-            </div>
-            <div className="hidden md:flex items-center space-x-4">
-              <Button onClick={scrollToTecnicos}>Encontrar Técnicos</Button>
-              <Button variant="outline">Quero me certificar</Button>
-              <Button variant="outline" onClick={() => navigate('/fredy-vinagre')}>
-                Quem é Fredy Vinagre
-              </Button>
-            </div>
-            <MobileMenu onNavigate={navigate} onScrollToTecnicos={scrollToTecnicos} />
-          </div>
-        </div>
-      </header>
+      <Header onScrollToTecnicos={scrollToTecnicos} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center text-center px-4">
