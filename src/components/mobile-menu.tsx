@@ -14,7 +14,7 @@ const MobileMenu = ({ onNavigate, onScrollToTecnicos }: MobileMenuProps) => {
 
   const menuItems = [
     { label: "Encontrar Técnicos", action: onScrollToTecnicos },
-    { label: "Quero me certificar", action: () => onNavigate('/') },
+    { label: "Quero me certificar", action: () => onNavigate('/certificacao') },
     { label: "Quem é Fredy Vinagre", action: () => onNavigate('/fredy-vinagre') },
   ];
 
@@ -26,11 +26,11 @@ const MobileMenu = ({ onNavigate, onScrollToTecnicos }: MobileMenuProps) => {
         onClick={() => setIsOpen(!isOpen)}
         className="p-2"
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </Button>
 
       {isOpen && (
-        <div className="absolute top-16 right-4 left-4 bg-card border border-border rounded-lg shadow-lg z-50">
+        <div className="absolute top-full left-0 right-0 bg-card border-b border-border shadow-lg z-50">
           <div className="p-4 space-y-2">
             {menuItems.map((item) => (
               <Button
