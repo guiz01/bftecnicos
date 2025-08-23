@@ -377,6 +377,7 @@ const FredyVinagre = () => {
                 <CardContent>
                   <ul className="space-y-3 text-muted-foreground">
                     <li>• Palestrante em congressos mundiais de Las Vegas e Budapeste</li>
+                    <li>• Representante Oficial da Mandelay em Portugal</li>
                   </ul>
                 </CardContent>
               </Card>
