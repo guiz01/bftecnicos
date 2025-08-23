@@ -378,6 +378,7 @@ const FredyVinagre = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li>• Palestrante em congressos mundiais de Las Vegas e Budapeste</li>
                     <li>• Representante Oficial da Mandelay em Portugal</li>
+                    <li>• Lançamento de 7 ebooks nas áreas de naturopatia, stress, exercícios práticos para a felicidade, dicas para desequilíbrios hormonais e um estudo aprofundado sobre a menopausa.</li>
                   </ul>
                 </CardContent>
               </Card>
