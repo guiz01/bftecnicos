@@ -377,10 +377,6 @@ const FredyVinagre = () => {
                 <CardContent>
                   <ul className="space-y-3 text-muted-foreground">
                     <li>• Palestrante em congressos mundiais de Las Vegas e Budapeste</li>
-                    <li>• Consultor para centros de saúde na Europa e América Latina</li>
-                    <li>• Pesquisador colaborador em projetos internacionais</li>
-                    <li>• Autor de artigos científicos publicados em revistas internacionais</li>
-                    <li>• Representante Oficial da Mandelay em Portugal</li>
                   </ul>
                 </CardContent>
               </Card>
