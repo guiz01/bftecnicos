@@ -356,9 +356,6 @@ const FredyVinagre = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-muted-foreground">
-                    <li>• Certificado em Biofeedback Avançado (BCIA)</li>
-                    <li>• Especialista em Neurofeedback (BCIA)</li>
-                    <li>• Certificação em HRV (Variabilidade da Frequência Cardíaca)</li>
                     <li>• Formador Internacional em Biofeedback</li>
                     <li>• Formador certificado pela Mandelay Kfc</li>
                     <li>• Naturopata com cédula profissional nº C-002770</li>
