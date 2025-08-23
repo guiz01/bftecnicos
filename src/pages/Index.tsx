@@ -181,7 +181,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Heart className="text-primary" size={24} />
                 </div>
                 <CardTitle>Saúde Mental</CardTitle>
@@ -195,7 +195,7 @@ const Index = () => {
             
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Award className="text-primary" size={24} />
                 </div>
                 <CardTitle>Performance</CardTitle>
@@ -209,7 +209,7 @@ const Index = () => {
             
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <Users className="text-primary" size={24} />
                 </div>
                 <CardTitle>Bem-Estar Físico</CardTitle>
