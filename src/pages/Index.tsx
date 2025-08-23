@@ -123,7 +123,7 @@ const Index = () => {
             <div className="flex items-center space-x-4">
               <button 
                 onClick={() => navigate('/')}
-                className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+                className="flex items-start space-x-2 hover:opacity-80 transition-opacity"
               >
                 <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-12" />
                 <div className="flex flex-col">
