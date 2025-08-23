@@ -132,24 +132,9 @@ const FredyVinagre = () => {
                   Em Julho de 2025 passa a ser Representante Oficial da Mandelay em Portugal na venda dos equipamentos e respectiva formação e certificação de novos alunos. No mesmo mês lança 7 ebooks na área da naturopatia, stress, exercícios práticos para a felicidade e dicas para desiquilibrios hormonais, não esquecendo um retrato muito detalhado sobre a Menopausa e os seus efeitos. E o futuro? Ainda agora tudo está a começar.
                 </p>
               </div>
-
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <div className="flex items-center space-x-2">
-                  <Mail className="w-4 h-4" />
-                  <span>fredy@fredyvinagre.com</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+55 (11) 9999-0000</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>São Paulo, SP</span>
-                </div>
-              </div>
             </div>
             
-            {/* Imagem - 1/3 do espaço */}
+            {/* Imagem e contatos - 1/3 do espaço */}
             <div className="relative">
               <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-lg">
                 <img 
@@ -158,7 +143,27 @@ const FredyVinagre = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-lg">
+              
+              {/* Card de contatos destacado */}
+              <div className="absolute -bottom-6 left-0 right-0 bg-primary text-primary-foreground rounded-lg shadow-lg p-4">
+                <h4 className="font-semibold text-center mb-3">Contacto</h4>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center space-x-2">
+                    <Mail className="w-4 h-4" />
+                    <span>fredy@fredyvinagre.com</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4" />
+                    <span>+55 (11) 9999-0000</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="w-4 h-4" />
+                    <span>São Paulo, SP</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-lg">
                 <span className="font-semibold text-lg">20+ anos</span>
                 <span className="text-sm block">de experiência</span>
               </div>
