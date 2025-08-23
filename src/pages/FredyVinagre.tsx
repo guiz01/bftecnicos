@@ -339,8 +339,6 @@ const FredyVinagre = () => {
                   <ul className="space-y-3 text-muted-foreground">
                     <li>• Graduação em Comunicação Social pela Universidade Autónoma de Lisboa</li>
                     <li>• Especialização em Biofeedback Clínico pelo Biofeedback Institute of America</li>
-                    <li>• Mestrado em Neurociências pela Universidade Federal de São Paulo</li>
-                    <li>• Doutorado em Psicofisiologia pela Universidade de São Paulo</li>
                   </ul>
                 </CardContent>
               </Card>
