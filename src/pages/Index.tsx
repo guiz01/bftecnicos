@@ -276,31 +276,62 @@ const Index = () => {
                         {tecnico.location && (
                           <div className="flex items-start">
                             <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="truncate">{tecnico.location}</span>
+                            <a 
+                              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(tecnico.location)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline truncate"
+                            >
+                              {tecnico.location}
+                            </a>
                           </div>
                         )}
                         {tecnico.email && (
                           <div className="flex items-start">
                             <Mail className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="truncate">{tecnico.email}</span>
+                            <a 
+                              href={`mailto:${tecnico.email}`}
+                              className="text-primary hover:underline truncate"
+                            >
+                              {tecnico.email}
+                            </a>
                           </div>
                         )}
                         {tecnico.phone && (
                           <div className="flex items-start">
                             <Phone className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="truncate">{tecnico.phone}</span>
+                            <a 
+                              href={`tel:${tecnico.phone}`}
+                              className="text-primary hover:underline truncate"
+                            >
+                              {tecnico.phone}
+                            </a>
                           </div>
                         )}
                         {tecnico.website && (
                           <div className="flex items-start">
                             <Globe className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="truncate">{tecnico.website}</span>
+                            <a 
+                              href={tecnico.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline truncate"
+                            >
+                              {tecnico.website}
+                            </a>
                           </div>
                         )}
                         {tecnico.social_media && (
                           <div className="flex items-start">
                             <ExternalLink className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
-                            <span className="truncate">{tecnico.social_media}</span>
+                            <a 
+                              href={tecnico.social_media}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline truncate"
+                            >
+                              {tecnico.social_media}
+                            </a>
                           </div>
                         )}
                       </div>
@@ -449,10 +480,42 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4 text-center">Contacto</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>WhatsApp: (+351) 961 961 111</li>
-                <li>Email: fredyvinagre@gmail.com</li>
-                <li>Instagram: @fredyvinagre.biofeedback</li>
-                <li>Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa</li>
+                <li>
+                  <a 
+                    href="tel:+351961961111"
+                    className="text-primary hover:underline"
+                  >
+                    WhatsApp: (+351) 961 961 111
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="mailto:fredyvinagre@gmail.com"
+                    className="text-primary hover:underline"
+                  >
+                    Email: fredyvinagre@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://instagram.com/fredyvinagre.biofeedback"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Instagram: @fredyvinagre.biofeedback
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20Biofeedback%2C%20Avenida%20da%20Rep%C3%BAblica%2C%2032%2C%201%C2%BA%20Esquerdo%201050-193%20Lisboa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
