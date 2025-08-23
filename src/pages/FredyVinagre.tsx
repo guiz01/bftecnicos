@@ -290,6 +290,51 @@ const FredyVinagre = () => {
         </div>
       </section>
 
+      {/* Google Maps Embed */}
+      <section className="py-20 px-4 bg-card">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-2">Localização da Clínica</h3>
+            <p className="text-muted-foreground">
+              Clínica de Biofeedback by Fredy Vinagre - Serviços de Naturopatia
+            </p>
+          </div>
+          <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.5!2d-9.1528!3d38.7228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19347e0b8e8e5d%3A0x8e8e8e8e8e8e8e8e!2sAvenida%20da%20Rep%C3%BAblica%2C%2032%2C%201%C2%BA%20Esquerdo%201050-193%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1234567890!5m2!1spt-PT!2spt"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da Clínica de Biofeedback"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* YouTube Embed */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
+            <p className="text-muted-foreground">
+              Conheça mais sobre o método Biofredy Vinagre
+            </p>
+          </div>
+          <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/FHd-bVV2E0I"
+              title="Fredy Vinagre - Biofeedback"
+              className="w-full h-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen={true}
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* Formação e Especializações */}
       <section className="py-20 px-4 bg-card">
         <div className="max-w-6xl mx-auto">
