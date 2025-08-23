@@ -10,6 +10,7 @@ import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, S
 import { Skeleton } from "@/components/ui/skeleton";
 import MobileMenu from "@/components/mobile-menu";
 import Pagination from "@/components/pagination";
+import Footer from "@/components/Footer"; // Importando o novo componente Footer
 
 interface Tecnico {
   id: string;
@@ -407,11 +408,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-background border-t border-border py-4">
-        <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>&copy; 2024 Biofeedback PRO. Todos os direitos reservados.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
