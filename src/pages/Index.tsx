@@ -82,10 +82,6 @@ const Index = () => {
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
-    const element = document.getElementById('tecnicos-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   };
 
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
