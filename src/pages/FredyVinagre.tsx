@@ -287,6 +287,25 @@ const FredyVinagre = () => {
               </div>
             </div>
           </div>
+
+          {/* YouTube Embed */}
+          <div className="max-w-4xl mx-auto mt-20"> {/* Added mt-20 for spacing */}
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
+              <p className="text-muted-foreground">
+                Conheça mais sobre o método Biofredy Vinagre
+              </p>
+            </div>
+            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/FHd-bVV2E0I"
+                title="Fredy Vinagre - Biofeedback"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen={true}
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -309,27 +328,6 @@ const FredyVinagre = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização da Clínica de Biofeedback"
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      {/* YouTube Embed */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
-            <p className="text-muted-foreground">
-              Conheça mais sobre o método Biofredy Vinagre
-            </p>
-          </div>
-          <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.youtube.com/embed/FHd-bVV2E0I"
-              title="Fredy Vinagre - Biofeedback"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen={true}
             ></iframe>
           </div>
         </div>
