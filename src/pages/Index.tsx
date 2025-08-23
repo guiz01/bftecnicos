@@ -180,7 +180,7 @@ const Index = () => {
             <Card className="bg-background border-border">
               <CardHeader>
                 <Users className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Controle Autônomo</CardTitle>
+                <CardTitle>Controle Autónomo</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -197,7 +197,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Benefícios para saúde mental, redução de estresse, melhora da qualidade do 
+                  Benefícios para saúde mental, redução de stresse, melhora da qualidade do 
                   sono e aumento da consciência corporal.
                 </p>
               </CardContent>
@@ -350,8 +350,8 @@ const Index = () => {
                   <Heart className="text-primary" size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">Redução de Estresse</h3>
-                  <p className="text-muted-foreground">Controle do sistema nervoso autônomo para reduzir níveis de cortisol.</p>
+                  <h3 className="text-lg font-semibold text-foreground">Redução de Stresse</h3>
+                  <p className="text-muted-foreground">Controle do sistema nervoso autónomo para reduzir níveis de cortisol.</p>
                 </div>
               </div>
               
@@ -382,7 +382,7 @@ const Index = () => {
                   <Heart className="text-primary" size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">Dor Crônica</h3>
+                  <h3 className="text-lg font-semibold text-foreground">Dor Crónica</h3>
                   <p className="text-muted-foreground">Controle da percepção da dor através de técnicas específicas.</p>
                 </div>
               </div>
@@ -447,7 +447,7 @@ const Index = () => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4 text-center">Contato</h3>
+              <h3 className="font-semibold mb-4 text-center">Contacto</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>contato@fredyvinagre.com</li>
                 <li>+55 (11) 9999-0000</li>

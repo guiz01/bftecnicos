@@ -102,7 +102,7 @@ const FredyVinagre = () => {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Como pioneiro no Brasil no uso do Biofeedback para tratamento de diversas condições 
                 de saúde, Fredy desenvolveu um método próprio que já ajudou milhares de pacientes 
-                a superar desafios como ansiedade, estresse, dor crônica e problemas de sono.
+                a superar desafios como ansiedade, stresse, dor crónica e problemas de sono.
               </p>
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
@@ -143,7 +143,7 @@ const FredyVinagre = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Formação e Especializações</h2>
             <p className="text-lg text-muted-foreground">
-              Qualificação acadêmica e profissional de excelência
+              Qualificação académica e profissional de excelência
             </p>
           </div>
           
@@ -157,7 +157,7 @@ const FredyVinagre = () => {
                     <BookOpen className="w-8 h-8 text-primary" />
                     <div>
                       <CardTitle>Educação</CardTitle>
-                      <CardDescription>Formação acadêmica completa</CardDescription>
+                      <CardDescription>Formação académica completa</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -331,7 +331,7 @@ const FredyVinagre = () => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4 text-center">Contato</h3>
+              <h3 className="font-semibold mb-4 text-center">Contacto</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>contato@fredyvinagre.com</li>
                 <li>+55 (11) 9999-0000</li>
