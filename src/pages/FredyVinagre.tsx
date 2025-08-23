@@ -1,18 +1,85 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, Search, ExternalLink } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 import MobileMenu from "@/components/mobile-menu";
+import Pagination from "@/components/pagination";
+
+interface Tecnico {
+  id: string;
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  phone: string;
+  website: string;
+  social_media: string;
+  specialty: string;
+}
 
 const FredyVinagre = () => {
+  const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
+  const [filteredTecnicos, setFilteredTecnicos] = useState<Tecnico[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const tecnicosPerPage = 6;
   const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Fredy Vinagre | Especialista em Biofeedback - Biofeedback PRO";
   }, []);
+
+  useEffect(() => {
+    const fetchTecnicos = async () => {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('tecnicos')
+        .select('*');
+
+      if (error) {
+        console.error("Error fetching tecnicos:", error);
+      } else if (data) {
+        setTecnicos(data);
+        setFilteredTecnicos(data);
+        setTotalPages(Math.ceil(data.length / tecnicosPerPage));
+      }
+      setLoading(false);
+    };
+
+    fetchTecnicos();
+  }, []);
+
+  useEffect(() => {
+    if (searchTerm === "") {
+      setFilteredTecnicos(tecnicos);
+      setTotalPages(Math.ceil(tecnicos.length / tecnicosPerPage));
+      setCurrentPage(1);
+    } else {
+      const filtered = tecnicos.filter(tecnico => 
+        tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredTecnicos(filtered);
+      setTotalPages(Math.ceil(filtered.length / tecnicosPerPage));
+      setCurrentPage(1);
+    }
+  }, [searchTerm, tecnicos]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const scrollToTecnicos = () => {
     const element = document.getElementById('tecnicos-section');
@@ -20,6 +87,10 @@ const FredyVinagre = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const indexOfLastTecnico = currentPage * tecnicosPerPage;
+  const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
+  const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -82,7 +153,7 @@ const FredyVinagre = () => {
       </section>
 
       {/* Sobre Fredy */}
-      <section id="tecnicos-section" className="py-20 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Quem é o Fredy Vinagre?</h2>
@@ -334,6 +405,133 @@ const FredyVinagre = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Técnicos Certificados Section */}
+      <section id="tecnicos-section" className="py-20 px-4 bg-background">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Técnicos Certificados</h2>
+            <p className="text-lg text-muted-foreground">
+              Profissionais qualificados e treinados pelo método Fredy Vinagre
+            </p>
+          </div>
+
+          {/* Barra de Busca */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+              <Input
+                type="text"
+                placeholder="Buscar por nome, especialidade, localização..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-12 pr-4 py-3 text-lg"
+              />
+            </div>
+            {searchTerm && (
+              <p className="text-center text-muted-foreground mt-4">
+                Encontrados {filteredTecnicos.length} técnico(s) para "{searchTerm}"
+              </p>
+            )}
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {loading ? (
+              Array.from({ length: 6 }).map((_, index) => (
+                <Card key={index} className="bg-card border-border">
+                  <div className="flex items-center p-4">
+                    <div className="flex-shrink-0 mr-4">
+                      <Skeleton className="w-16 h-16 rounded-full" />
+                    </div>
+                    <div className="flex-grow">
+                      <div className="flex items-center mb-3">
+                        <Skeleton className="h-6 w-32 mr-3" />
+                        <Skeleton className="h-4 w-20" />
+                      </div>
+                      <div className="space-y-2">
+                        <Skeleton className="h-3 w-full" />
+                        <Skeleton className="h-3 w-full" />
+                        <Skeleton className="h-3 w-full" />
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            ) : currentTecnicos.length > 0 ? (
+              currentTecnicos.map((tecnico) => (
+                <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
+                  <div className="flex items-start p-4">
+                    <div className="flex-shrink-0 mr-4">
+                      <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center">
+                        <Users className="text-primary" size={24} />
+                      </div>
+                    </div>
+                    <div className="flex-grow min-w-0">
+                      <div className="mb-3">
+                        <CardTitle className="text-lg truncate">{tecnico.name}</CardTitle>
+                        <CardDescription className="text-sm truncate">{tecnico.title}</CardDescription>
+                      </div>
+                      
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        {tecnico.location && (
+                          <div className="flex items-start">
+                            <MapPin className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.location}</span>
+                          </div>
+                        )}
+                        {tecnico.email && (
+                          <div className="flex items-start">
+                            <Mail className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.email}</span>
+                          </div>
+                        )}
+                        {tecnico.phone && (
+                          <div className="flex items-start">
+                            <Phone className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.phone}</span>
+                          </div>
+                        )}
+                        {tecnico.website && (
+                          <div className="flex items-start">
+                            <Globe className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.website}</span>
+                          </div>
+                        )}
+                        {tecnico.social_media && (
+                          <div className="flex items-start">
+                            <ExternalLink className="w-3 h-3 mr-2 mt-0.5 flex-shrink-0" />
+                            <span className="truncate">{tecnico.social_media}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))
+            ) : (
+              <div className="col-span-3 text-center py-12">
+                <Users className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-foreground mb-2">Nenhum técnico encontrado</h3>
+                <p className="text-muted-foreground">
+                  {searchTerm 
+                    ? `Nenhum técnico encontrado para "${searchTerm}". Tente buscar por outros termos.`
+                    : "Ainda não há técnicos cadastrados no sistema."
+                  }
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Paginação */}
+          {!loading && filteredTecnicos.length > tecnicosPerPage && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          )}
         </div>
       </section>
 
