@@ -290,7 +290,7 @@ const FredyVinagre = () => {
               
               {/* YouTube Embed - Movido para aqui, sem título */}
               <div className="mt-20 w-full"> {/* Ajustado o margin-top para espaçamento */}
-                <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+                <div className="w-full h-[400px] bg-muted rounded-xl overflow-hidden shadow-lg">
                   <iframe
                     src="https://www.youtube.com/embed/FHd-bVV2E0I"
                     title="Fredy Vinagre - Biofeedback"
