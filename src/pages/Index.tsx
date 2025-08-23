@@ -155,9 +155,12 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
         <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground">
             Biofeedback PRO
           </h1>
+          <p className="text-xl text-muted-foreground mb-6">
+            by Fredy Vinagre
+          </p>
           <p className="text-xl text-muted-foreground mb-8">
             Encontre profissionais qualificados e certificados pelo método Biofeedback PRO de Fredy Vinagre para tratamento de saúde e bem-estar.
           </p>
