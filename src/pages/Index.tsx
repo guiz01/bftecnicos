@@ -145,7 +145,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center text-center px-4">
+      <section className="relative min-h-screen flex items-center justify-center text-center px-4">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
