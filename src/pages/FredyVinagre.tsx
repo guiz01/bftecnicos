@@ -311,9 +311,9 @@ const FredyVinagre = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-background border-t border-border py-12 px-4">
+      <footer className="bg-background border-t border-border py-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img src="/images/logo.svg" alt="Biofeedback PRO Logo" className="h-8" />
@@ -322,26 +322,6 @@ const FredyVinagre = () => {
               <p className="text-muted-foreground">
                 Método Biofeedback - Técnicos Certificados
               </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Links Rápidos</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Sobre o Método</a></li>
-                <li><a href="#" className="hover:text-foreground">Técnicos Certificados</a></li>
-                <li><a href="#" className="hover:text-foreground">Formação</a></li>
-                <li><a href="#" className="hover:text-foreground">Contato</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold mb-4">Recursos</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground">Artigos</a></li>
-                <li><a href="#" className="hover:text-foreground">Pesquisas</a></li>
-                <li><a href="#" className="hover:text-foreground">Webinars</a></li>
-                <li><a href="#" className="hover:text-foreground">FAQ</a></li>
-              </ul>
             </div>
             
             <div>
