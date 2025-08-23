@@ -94,15 +94,31 @@ const FredyVinagre = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Fredy Vinagre é um especialista em Biofeedback com mais de 20 anos de experiência 
-                no desenvolvimento de técnicas avançadas para o tratamento de saúde e bem-estar. 
-                Sua metodologia única combina ciência, tecnologia e sabedoria ancestral para 
-                ajudar pessoas a alcançar o máximo potencial de suas capacidades fisiológicas e mentais.
+                Fredy Vinagre formou-se em Comunicação Social pela Universidade Autónoma de Lisboa. Foi jornalista durante vários anos, tendo trabalhado em publicações como a Exame. Fez parte da equipa fundadora do jornal Meios&amp;Publicidade, publicação que mais tarde dirigiu.
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Como pioneiro no Brasil no uso do Biofeedback para tratamento de diversas condições 
-                de saúde, Fredy desenvolveu um método próprio que já ajudou milhares de pacientes 
-                a superar desafios como ansiedade, stresse, dor crónica e problemas de sono.
+                Foi ainda responsável pelo lançamento em Portugal da JustLeader uma revista na área da gestão de recursos humanos. Foi também o autor e "inventor" do projecto editorial BoasNotícias, um site de informação cujo critério editorial era simples: só eram publicadas as boas notícias de Portugal e do mundo.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Em 2007 abandona o jornalismo para se dedicar a tempo inteiro à área terapêutica. Torna-se técnico de Biofeedback, uma terapia que ficou conhecida em Portugal como terapia quântica. E é na sequência da terapia quântica que lança o livro "Ser Feliz Custa Tão Pouco", uma vez que ele reúne todas as práticas e conselhos que o autor dá nas suas sessões terapêuticas.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Em 2018 torna-se Biofeedback Specialist certificado pela BANHS – The Board of Advanced Natural Health Sciences. No mesmo ano integra a Clínica Dr. Pinto Coelho trabalhando com uma excelente equipa em cuidados de saúde.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                É formador internacional de Biofeedback, tendo participado nos últimos anos nos congressos mundiais de Las Vegas e de Budapeste como orador. Corre o mundo a fazer uma das suas paixões: ensinar. Ensinar a ajudar.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Desde 2022 que se tornou naturopata com cédula profissional nº C-002770 emitida pela Administração Central do Sistema da Saúde do Ministério da Saúde de Portugal.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Um ano depois abre a sua própria clínica, a Clínica de Biofeedback by Fredy Vinagre – Serviços de Naturopatia.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Ainda em 2023 torna-se formador certificado pela Mandelay Kfc.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Em Julho de 2025 passa a ser Representante Oficial da Mandelay em Portugal na venda dos equipamentos e respectiva formação e certificação de novos alunos. No mesmo mês lança 7 ebooks na área da naturopatia, stress, exercícios práticos para a felicidade e dicas para desiquilibrios hormonais, não esquecendo um retrato muito detalhado sobre a Menopausa e os seus efeitos. E o futuro? Ainda agora tudo está a começar.
               </p>
               <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-2">
@@ -163,7 +179,7 @@ const FredyVinagre = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-muted-foreground">
-                    <li>• Graduação em Psicologia pela Universidade de São Paulo</li>
+                    <li>• Graduação em Comunicação Social pela Universidade Autónoma de Lisboa</li>
                     <li>• Especialização em Biofeedback Clínico pelo Biofeedback Institute of America</li>
                     <li>• Mestrado em Neurociências pela Universidade Federal de São Paulo</li>
                     <li>• Doutorado em Psicofisiologia pela Universidade de São Paulo</li>
@@ -188,6 +204,8 @@ const FredyVinagre = () => {
                     <li>• Especialista em Neurofeedback (BCIA)</li>
                     <li>• Certificação em HRV (Variabilidade da Frequência Cardíaca)</li>
                     <li>• Formador Internacional em Biofeedback</li>
+                    <li>• Formador certificado pela Mandelay Kfc</li>
+                    <li>• Naturopata com cédula profissional nº C-002770</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -205,10 +223,11 @@ const FredyVinagre = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 text-muted-foreground">
-                    <li>• Palestrante em congressos internacionais de Biofeedback</li>
+                    <li>• Palestrante em congressos mundiais de Las Vegas e Budapeste</li>
                     <li>• Consultor para centros de saúde na Europa e América Latina</li>
                     <li>• Pesquisador colaborador em projetos internacionais</li>
                     <li>• Autor de artigos científicos publicados em revistas internacionais</li>
+                    <li>• Representante Oficial da Mandelay em Portugal</li>
                   </ul>
                 </CardContent>
               </Card>
