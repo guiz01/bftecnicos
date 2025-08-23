@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award, Search } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import MobileMenu from "@/components/mobile-menu";
+import Pagination from "@/components/pagination";
 
 interface Tecnico {
   id: string;
@@ -27,7 +28,17 @@ const Index = () => {
   const [filteredTecnicos, setFilteredTecnicos] = useState<Tecnico[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const tecnicosPerPage = 6;
   const navigate = useNavigate();
+
+  const scrollToTecnicos = () => {
+    const element = document.getElementById('tecnicos-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const fetchTecnicos = async () => {
@@ -41,6 +52,7 @@ const Index = () => {
       } else if (data) {
         setTecnicos(data);
         setFilteredTecnicos(data);
+        setTotalPages(Math.ceil(data.length / tecnicosPerPage));
       }
       setLoading(false);
     };
@@ -51,6 +63,8 @@ const Index = () => {
   useEffect(() => {
     if (searchTerm === "") {
       setFilteredTecnicos(tecnicos);
+      setTotalPages(Math.ceil(tecnicos.length / tecnicosPerPage));
+      setCurrentPage(1);
     } else {
       const filtered = tecnicos.filter(tecnico => 
         tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -61,15 +75,22 @@ const Index = () => {
         tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredTecnicos(filtered);
+      setTotalPages(Math.ceil(filtered.length / tecnicosPerPage));
+      setCurrentPage(1);
     }
   }, [searchTerm, tecnicos]);
 
-  const scrollToTecnicos = () => {
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
     const element = document.getElementById('tecnicos-section');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  const indexOfLastTecnico = currentPage * tecnicosPerPage;
+  const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
+  const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -216,7 +237,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             {loading ? (
-              Array.from({ length: 3 }).map((_, index) => (
+              Array.from({ length: 6 }).map((_, index) => (
                 <Card key={index} className="bg-card border-border">
                   <div className="flex items-center p-4">
                     <div className="flex-shrink-0 mr-4">
@@ -236,8 +257,8 @@ const Index = () => {
                   </div>
                 </Card>
               ))
-            ) : filteredTecnicos.length > 0 ? (
-              filteredTecnicos.map((tecnico) => (
+            ) : currentTecnicos.length > 0 ? (
+              currentTecnicos.map((tecnico) => (
                 <Card key={tecnico.id} className="bg-card border-border hover:shadow-lg hover:shadow-primary/20 transition-shadow">
                   <div className="flex items-start p-4">
                     <div className="flex-shrink-0 mr-4">
@@ -300,6 +321,15 @@ const Index = () => {
               </div>
             )}
           </div>
+
+          {/* Paginação */}
+          {!loading && filteredTecnicos.length > tecnicosPerPage && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
+          )}
         </div>
       </section>
 
