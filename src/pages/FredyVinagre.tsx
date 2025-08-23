@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin } from "lucide-react";
+import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram } from "lucide-react";
 import MobileMenu from "@/components/mobile-menu";
 
 const FredyVinagre = () => {
@@ -149,16 +149,20 @@ const FredyVinagre = () => {
                 <h4 className="font-semibold text-center mb-3">Contacto</h4>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4" />
-                    <span>fredy@fredyvinagre.com</span>
+                    <Phone className="w-4 h-4" />
+                    <span>WhatsApp: (+351) 961 961 111</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4" />
-                    <span>+55 (11) 9999-0000</span>
+                    <Mail className="w-4 h-4" />
+                    <span>fredyvinagre@gmail.com</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Instagram className="w-4 h-4" />
+                    <span>@fredyvinagre.biofeedback</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <MapPin className="w-4 h-4" />
-                    <span>São Paulo, SP</span>
+                    <span>Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa</span>
                   </div>
                 </div>
               </div>
@@ -371,9 +375,10 @@ const FredyVinagre = () => {
             <div>
               <h3 className="font-semibold mb-4 text-center">Contacto</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>contato@fredyvinagre.com</li>
-                <li>+55 (11) 9999-0000</li>
-                <li>São Paulo, SP</li>
+                <li>WhatsApp: (+351) 961 961 111</li>
+                <li>Email: fredyvinagre@gmail.com</li>
+                <li>Instagram: @fredyvinagre.biofeedback</li>
+                <li>Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa</li>
               </ul>
             </div>
           </div>

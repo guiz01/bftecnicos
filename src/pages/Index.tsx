@@ -449,9 +449,10 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4 text-center">Contacto</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li>contato@fredyvinagre.com</li>
-                <li>+55 (11) 9999-0000</li>
-                <li>São Paulo, SP</li>
+                <li>WhatsApp: (+351) 961 961 111</li>
+                <li>Email: fredyvinagre@gmail.com</li>
+                <li>Instagram: @fredyvinagre.biofeedback</li>
+                <li>Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa</li>
               </ul>
             </div>
           </div>
