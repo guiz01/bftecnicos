@@ -225,75 +225,71 @@ const FredyVinagre = () => {
             </div>
             
             {/* Imagem, contatos e YouTube - 1/3 do espaço */}
-            <div className="relative">
-              <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src="/images/perfil-fredy.jpg" 
-                  alt="Fredy Vinagre" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Card de contatos destacado */}
-              <div className="absolute -bottom-6 left-0 right-0 bg-primary text-primary-foreground rounded-lg shadow-lg p-4">
-                <h4 className="font-semibold text-center mb-3">Contacto</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4" />
-                    <a 
-                      href="tel:+351961961111"
-                      className="text-primary hover:underline"
-                    >
-                      WhatsApp: (+351) 961 961 111
-                    </a>
+            <div className="md:col-span-1 flex flex-col items-center">
+              <div className="relative w-full">
+                <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/images/perfil-fredy.jpg" 
+                    alt="Fredy Vinagre" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Card de contatos destacado */}
+                <div className="absolute -bottom-6 left-0 right-0 bg-primary text-primary-foreground rounded-lg shadow-lg p-4">
+                  <h4 className="font-semibold text-center mb-3">Contacto</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <Phone className="w-4 h-4" />
+                      <a 
+                        href="tel:+351961961111"
+                        className="text-primary hover:underline"
+                      >
+                        WhatsApp: (+351) 961 961 111
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Mail className="w-4 h-4" />
+                      <a 
+                        href="mailto:fredyvinagre@gmail.com"
+                        className="text-primary hover:underline"
+                      >
+                        fredyvinagre@gmail.com
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Instagram className="w-4 h-4" />
+                      <a 
+                        href="https://instagram.com/fredyvinagre.biofeedback"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        @fredyvinagre.biofeedback
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <MapPin className="w-4 h-4" />
+                      <a 
+                        href="https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20Biofeedback%2C%20Avenida%20da%20Rep%C3%BAblica%2C%2032%2C%201%C2%BA%20Esquerdo%201050-193%20Lisboa"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline"
+                      >
+                        Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Mail className="w-4 h-4" />
-                    <a 
-                      href="mailto:fredyvinagre@gmail.com"
-                      className="text-primary hover:underline"
-                    >
-                      fredyvinagre@gmail.com
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Instagram className="w-4 h-4" />
-                    <a 
-                      href="https://instagram.com/fredyvinagre.biofeedback"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      @fredyvinagre.biofeedback
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="w-4 h-4" />
-                    <a 
-                      href="https://www.google.com/maps/search/?api=1&query=Cl%C3%ADnica%20de%20Biofeedback%2C%20Avenida%20da%20Rep%C3%BAblica%2C%2032%2C%201%C2%BA%20Esquerdo%201050-193%20Lisboa"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline"
-                    >
-                      Clínica de Biofeedback, Avenida da República, 32, 1º Esquerdo 1050-193 Lisboa
-                    </a>
-                  </div>
+                </div>
+                
+                <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-lg">
+                  <span className="font-semibold text-lg">20+ anos</span>
+                  <span className="text-sm block">de experiência</span>
                 </div>
               </div>
               
-              <div className="absolute -top-6 -right-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg shadow-lg">
-                <span className="font-semibold text-lg">20+ anos</span>
-                <span className="text-sm block">de experiência</span>
-              </div>
-
-              {/* YouTube Embed - Movido para aqui */}
-              <div className="mt-32"> {/* Ajustado o margin-top para espaçamento */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
-                  <p className="text-muted-foreground">
-                    Conheça mais sobre o método Biofredy Vinagre
-                  </p>
-                </div>
+              {/* YouTube Embed - Movido para aqui, sem título */}
+              <div className="mt-20 w-full"> {/* Ajustado o margin-top para espaçamento */}
                 <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
                   <iframe
                     src="https://www.youtube.com/embed/FHd-bVV2E0I"
