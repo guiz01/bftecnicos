@@ -224,7 +224,7 @@ const FredyVinagre = () => {
               </div>
             </div>
             
-            {/* Imagem e contatos - 1/3 do espaço */}
+            {/* Imagem, contatos e YouTube - 1/3 do espaço */}
             <div className="relative">
               <div className="aspect-[4/5] bg-muted rounded-2xl overflow-hidden shadow-lg">
                 <img 
@@ -285,25 +285,25 @@ const FredyVinagre = () => {
                 <span className="font-semibold text-lg">20+ anos</span>
                 <span className="text-sm block">de experiência</span>
               </div>
-            </div>
-          </div>
 
-          {/* YouTube Embed */}
-          <div className="max-w-4xl mx-auto mt-20"> {/* Added mt-20 for spacing */}
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
-              <p className="text-muted-foreground">
-                Conheça mais sobre o método Biofredy Vinagre
-              </p>
-            </div>
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.youtube.com/embed/FHd-bVV2E0I"
-                title="Fredy Vinagre - Biofeedback"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen={true}
-              ></iframe>
+              {/* YouTube Embed - Movido para aqui */}
+              <div className="mt-32"> {/* Ajustado o margin-top para espaçamento */}
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Vídeo de Apresentação</h3>
+                  <p className="text-muted-foreground">
+                    Conheça mais sobre o método Biofredy Vinagre
+                  </p>
+                </div>
+                <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.youtube.com/embed/FHd-bVV2E0I"
+                    title="Fredy Vinagre - Biofeedback"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen={true}
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
