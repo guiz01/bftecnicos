@@ -383,7 +383,7 @@ const Index = () => {
       <section className="py-20 px-4 bg-primary">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-primary-foreground mb-4">
-            Pronto para transformar sua saúde?
+            Pronto para transformar sua vida?
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8">
             Encontre um técnico certificado perto de você e comece sua jornada de bem-estar.
