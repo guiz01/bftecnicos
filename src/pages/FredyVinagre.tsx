@@ -621,6 +621,12 @@ const FredyVinagre = () => {
               onPageChange={handlePageChange}
             />
           )}
+          {/* Texto "entre muitos outros" */}
+          {!loading && filteredTecnicos.length > 0 && (
+            <p className="text-center text-muted-foreground mt-4">
+              entre muitos outros
+            </p>
+          )}
         </div>
       </section>
 
