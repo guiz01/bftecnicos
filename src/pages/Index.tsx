@@ -135,7 +135,7 @@ const Index = () => {
         
         <div className="relative z-10 text-center max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-            Biofeedback PRO
+            Listagem Oficial de Técnicos de Biofeedback
           </h1>
           <p className="text-xl text-muted-foreground mb-8">
             Encontre profissionais de Biofeedback em língua portuguesa que estão qualificados para utilizarem os únicos dispositivos certificados com marca CE.
