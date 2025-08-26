@@ -154,7 +154,7 @@ const Index = () => {
             Biofeedback é uma técnica que treina as pessoas a melhorar a sua saúde usando sinais do seu próprio corpo. Através de sensores, você aprende a controlar funções corporais como frequência cardíaca, respiração e tensão muscular.
           </p>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
-            É uma abordagem não invasiva e eficaz para gerenciar o estresse, a ansiedade, a dor crônica e melhorar o desempenho geral.
+            É uma abordagem não invasiva e eficaz para gerenciar o stress, a ansiedade, a dor crônica e melhorar o desempenho geral.
           </p>
           {/* Removido o botão "Saiba Mais" */}
           {/* Removida a div com a imagem */}
@@ -177,11 +177,11 @@ const Index = () => {
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                   <Heart className="text-primary" size={24} />
                 </div>
-                <CardTitle>Redução do Estresse</CardTitle>
+                <CardTitle>Redução do Stress</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Aprenda a gerenciar e reduzir os níveis de estresse e ansiedade, promovendo um estado de calma e bem-estar.
+                  Aprenda a gerenciar e reduzir os níveis de stress e ansiedade, promovendo um estado de calma e bem-estar.
                 </p>
               </CardContent>
             </Card>
