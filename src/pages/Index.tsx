@@ -152,7 +152,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center"> {/* Alterado para text-center e removido grid */}
           <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
           <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
-            Biofeedback é uma técnica que treina as pessoas a melhorar a sua saúde usando sinais do seu próprio corpo. Através de sensores, você aprende a controlar funções corporais como frequência cardíaca, respiração e tensão muscular.
+            Com o Biofeedback, o corpo aprende a regular o sistema nervoso e a transformar o stress em equilíbrio. Esta terapia estimula a neuroplasticidade — a habilidade do cérebro de criar novas ligações e aprender a reagir de forma mais calma e saudável à vida.
           </p>
           <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
             É uma abordagem não invasiva e eficaz para gerenciar o stress, a ansiedade, a dor crônica e melhorar o desempenho geral.
