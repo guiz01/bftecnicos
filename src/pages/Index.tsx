@@ -148,26 +148,16 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-20 px-4 bg-card">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="md:order-2">
-            <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              Biofeedback é uma técnica que treina as pessoas a melhorar a sua saúde usando sinais do seu próprio corpo. Através de sensores, você aprende a controlar funções corporais como frequência cardíaca, respiração e tensão muscular.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8">
-              É uma abordagem não invasiva e eficaz para gerenciar o estresse, a ansiedade, a dor crônica e melhorar o desempenho geral.
-            </p>
-            <Button size="lg">Saiba Mais</Button>
-          </div>
-          <div className="md:order-1">
-            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="/images/biofeedback-explanation.jpg" 
-                alt="Explicação de Biofeedback" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto text-center"> {/* Alterado para text-center e removido grid */}
+          <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
+          <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
+            Biofeedback é uma técnica que treina as pessoas a melhorar a sua saúde usando sinais do seu próprio corpo. Através de sensores, você aprende a controlar funções corporais como frequência cardíaca, respiração e tensão muscular.
+          </p>
+          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
+            É uma abordagem não invasiva e eficaz para gerenciar o estresse, a ansiedade, a dor crônica e melhorar o desempenho geral.
+          </p>
+          {/* Removido o botão "Saiba Mais" */}
+          {/* Removida a div com a imagem */}
         </div>
       </section>
 
