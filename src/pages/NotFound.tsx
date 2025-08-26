@@ -301,6 +301,31 @@ const NotFound = () => {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-primary">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-primary-foreground mb-4">
+            Pronto para transformar sua vida?
+          </h2>
+          <p className="text-xl text-primary-foreground/80 mb-8">
+            Encontre um profissional certificado perto de você e comece sua jornada de bem-estar.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" onClick={handleScrollToTecnicos}>
+              Encontrar profissionais
+            </Button>
+            <Button 
+              size="lg" 
+              className="border-white text-white hover:bg-white hover:text-primary" 
+              style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}
+              onClick={() => window.open('https://fredyvinagre.com/comprar-equipamento/', '_blank')}
+            >
+              Quero ser um terapeuta
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <Footer />
     </div>
