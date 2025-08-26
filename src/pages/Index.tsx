@@ -28,7 +28,7 @@ interface Tecnico {
 const Index = () => {
   const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
   const [filteredTecnicos, setFilteredTecnicos] = useState<Tecnico[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // Correção aqui
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -153,9 +153,6 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
           <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
             Com o Biofeedback, o corpo aprende a regular o sistema nervoso e a transformar o stress em equilíbrio. Esta terapia estimula a neuroplasticidade — a habilidade do cérebro de criar novas ligações e aprender a reagir de forma mais calma e saudável à vida.
-          </p>
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
-            É uma abordagem não invasiva e eficaz para gerenciar o stress, a ansiedade, a dor crônica e melhorar o desempenho geral.
           </p>
           {/* Removido o botão "Saiba Mais" */}
           {/* Removida a div com a imagem */}
