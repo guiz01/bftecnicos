@@ -14,30 +14,15 @@ const NotFound = () => {
     document.title = "Página Não Encontrada - Biofeedback PRO";
   }, []);
 
-  const handleScrollToAbout = () => {
-    navigate("/#about-section");
-  };
-
-  const handleScrollToBenefits = () => {
-    navigate("/#benefits-section");
-  };
-
   const handleScrollToTecnicos = () => {
     navigate("/#tecnicos-section");
-  };
-
-  const handleNavigate = (path: string) => {
-    navigate(path);
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Header */}
       <Header 
-        onScrollToAbout={handleScrollToAbout}
-        onScrollToBenefits={handleScrollToBenefits}
         onScrollToTecnicos={handleScrollToTecnicos} 
-        onNavigate={handleNavigate}
       />
 
       <main className="flex-grow flex items-center justify-center px-4 py-16 text-center">

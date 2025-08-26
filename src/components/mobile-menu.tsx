@@ -6,13 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 
 interface MobileMenuProps {
-  onScrollToAbout: () => void;
-  onScrollToBenefits: () => void;
   onScrollToTecnicos: () => void;
-  onNavigate: (path: string) => void;
 }
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ onScrollToAbout, onScrollToBenefits, onScrollToTecnicos, onNavigate }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({ onScrollToTecnicos }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuItemClick = (action: () => void) => {
@@ -21,10 +18,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onScrollToAbout, onScrollToBene
   };
 
   const menuItems = [
-    { label: "O que é Biofeedback?", onClick: () => handleMenuItemClick(onScrollToAbout) },
-    { label: "Benefícios", onClick: () => handleMenuItemClick(onScrollToBenefits) },
-    { label: "Encontrar profissionais", onClick: () => handleMenuItemClick(onScrollToTecnicos) },
-    { label: "Quero me certificar", onClick: () => handleMenuItemClick(() => onNavigate("/certificacao")) },
+    { label: "O que é Biofeedback?", onClick: () => { setIsOpen(false); /* Add scroll to section logic if needed */ } },
+    { label: "Benefícios", onClick: () => { setIsOpen(false); /* Add scroll to section logic if needed */ } },
+    { label: "Encontrar profissionais", onClick: () => { setIsOpen(false); onScrollToTecnicos(); } },
+    { label: "Quero me certificar", onClick: () => { setIsOpen(false); /* Add navigation logic if needed */ } },
   ];
 
   return (

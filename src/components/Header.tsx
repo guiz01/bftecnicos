@@ -6,34 +6,19 @@ import { Button } from "@/components/ui/button";
 import MobileMenu from "@/components/mobile-menu";
 
 interface HeaderProps {
-  onScrollToAbout: () => void;
-  onScrollToBenefits: () => void;
   onScrollToTecnicos: () => void;
-  onNavigate: (path: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToBenefits, onScrollToTecnicos, onNavigate }) => {
+const Header: React.FC<HeaderProps> = ({ onScrollToTecnicos }) => {
   const navigate = useNavigate();
-
-  const handleMobileNavigate = (path: string) => {
-    onNavigate(path);
-  };
-
-  const handleScrollToAbout = () => {
-    onScrollToAbout();
-  };
-
-  const handleScrollToBenefits = () => {
-    onScrollToBenefits();
-  };
 
   const handleScrollToTecnicos = () => {
     onScrollToTecnicos();
   };
 
   const menuItems = [
-    { label: "O que é Biofeedback?", onClick: handleScrollToAbout },
-    { label: "Benefícios", onClick: handleScrollToBenefits },
+    { label: "O que é Biofeedback?", onClick: () => { /* Add scroll to section logic if needed */ } },
+    { label: "Benefícios", onClick: () => { /* Add scroll to section logic if needed */ } },
     { label: "Encontrar profissionais", onClick: handleScrollToTecnicos },
     { label: "Quero me certificar", onClick: () => navigate("/certificacao") },
   ];
@@ -59,12 +44,7 @@ const Header: React.FC<HeaderProps> = ({ onScrollToAbout, onScrollToBenefits, on
           ))}
         </nav>
         <div className="lg:hidden flex items-center">
-          <MobileMenu 
-            onScrollToAbout={handleScrollToAbout}
-            onScrollToBenefits={handleScrollToBenefits}
-            onScrollToTecnicos={handleScrollToTecnicos} 
-            onNavigate={handleMobileNavigate} 
-          />
+          <MobileMenu onScrollToTecnicos={handleScrollToTecnicos} />
         </div>
       </div>
     </header>

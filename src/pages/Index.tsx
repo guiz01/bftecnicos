@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -34,22 +34,10 @@ const Index = () => {
   const [totalPages, setTotalPages] = useState(1);
   const tecnicosPerPage = 6;
   const navigate = useNavigate();
-  const location = useLocation(); // Initialize useLocation
 
   useEffect(() => {
     document.title = "Biofeedback PRO - Encontre seu Especialista";
   }, []);
-
-  // Effect to scroll to section if hash is present in URL
-  useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.substring(1); // Remove '#'
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, [location.hash]); // Re-run when hash changes
 
   useEffect(() => {
     const fetchTecnicos = async () => {
@@ -95,16 +83,12 @@ const Index = () => {
     setCurrentPage(page);
   };
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const scrollToTecnicos = () => {
+    const element = document.getElementById('tecnicos-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const scrollToAbout = () => scrollToSection('about-section');
-  const scrollToBenefits = () => scrollToSection('benefits-section');
-  const scrollToTecnicos = () => scrollToSection('tecnicos-section');
 
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
@@ -133,10 +117,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <Header 
-        onScrollToAbout={scrollToAbout}
-        onScrollToBenefits={scrollToBenefits}
         onScrollToTecnicos={scrollToTecnicos} 
-        onNavigate={navigate}
       />
 
       {/* Hero Section */}
@@ -178,7 +159,7 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-8">
               É uma abordagem não invasiva e eficaz para gerenciar o estresse, a ansiedade, a dor crônica e melhorar o desempenho geral.
             </p>
-            <Button size="lg" onClick={scrollToAbout}>Saiba Mais</Button>
+            <Button size="lg">Saiba Mais</Button>
           </div>
           <div className="md:order-1">
             <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">

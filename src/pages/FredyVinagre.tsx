@@ -15,30 +15,15 @@ const FredyVinagre = () => {
     document.title = "Fredy Vinagre - Biofeedback PRO";
   }, []);
 
-  const handleScrollToAbout = () => {
-    navigate("/#about-section");
-  };
-
-  const handleScrollToBenefits = () => {
-    navigate("/#benefits-section");
-  };
-
   const handleScrollToTecnicos = () => {
     navigate("/#tecnicos-section");
-  };
-
-  const handleNavigate = (path: string) => {
-    navigate(path);
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <Header 
-        onScrollToAbout={handleScrollToAbout}
-        onScrollToBenefits={handleScrollToBenefits}
         onScrollToTecnicos={handleScrollToTecnicos} 
-        onNavigate={handleNavigate}
       />
 
       {/* Hero Section */}
