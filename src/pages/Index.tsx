@@ -116,9 +116,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <Header 
-        onScrollToTecnicos={scrollToTecnicos} 
-      />
+      <Header onScrollToTecnicos={scrollToTecnicos} />
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative">
@@ -149,7 +147,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about-section" className="py-20 px-4 bg-card">
+      <section className="py-20 px-4 bg-card">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="md:order-2">
             <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
@@ -174,7 +172,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits-section" className="py-20 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Benefícios do Biofeedback</h2>
@@ -404,7 +402,7 @@ const Index = () => {
             <Button size="lg" variant="secondary" onClick={scrollToTecnicos}>
               Encontrar profissionais
             </Button>
-            <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }} onClick={() => navigate("/certificacao")}>
+            <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
               Quero me certificar
             </Button>
           </div>
