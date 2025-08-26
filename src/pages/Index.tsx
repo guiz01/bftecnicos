@@ -231,7 +231,7 @@ const Index = () => {
       <section id="tecnicos-section" className="py-20 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Técnicos Certificados</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Listagem Oficial de Técnicos de Biofeedback</h2>
             <p className="text-lg text-muted-foreground">
               Profissionais qualificados e treinados pelo método Fredy Vinagre
             </p>
