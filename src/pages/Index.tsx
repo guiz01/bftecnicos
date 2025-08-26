@@ -10,7 +10,7 @@ import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, S
 import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from "@/components/pagination";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header"; // Importando o novo componente Header
+import Header from "@/components/Header";
 
 interface Tecnico {
   id: string;
@@ -23,8 +23,6 @@ interface Tecnico {
   social_media: string;
   specialty: string;
   avatar_url?: string;
-  latitude?: number;
-  longitude?: number;
 }
 
 const Index = () => {
@@ -38,7 +36,7 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Biofeedback PRO - Técnicos Certificados";
+    document.title = "Biofeedback PRO - Encontre seu Especialista";
   }, []);
 
   useEffect(() => {
@@ -106,6 +104,9 @@ const Index = () => {
 
   const formatSocialMediaUrl = (url: string) => {
     if (!url) return '';
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return url;
+    }
     if (url.startsWith('instagram.com/')) {
       return `https://instagram.com/${url.replace('instagram.com/', '')}`;
     }
@@ -118,7 +119,8 @@ const Index = () => {
       <Header onScrollToTecnicos={scrollToTecnicos} />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center text-center px-4">
+      <section className="min-h-screen flex items-center justify-center px-4 relative">
+        {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
@@ -130,15 +132,13 @@ const Index = () => {
         >
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground">
+        
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
             Biofeedback PRO
           </h1>
-          <p className="text-xl text-muted-foreground mb-6">
-            by Fredy Vinagre
-          </p>
           <p className="text-xl text-muted-foreground mb-8">
-            Encontre profissionais qualificados e certificados pelo método Biofeedback PRO de Fredy Vinagre para tratamento de saúde e bem-estar.
+            Encontre profissionais de Biofeedback em língua portuguesa que estão qualificados para utilizarem os únicos dispositivos certificados com marca CE.
           </p>
           <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToTecnicos}>
             Encontrar Técnicos
@@ -147,52 +147,79 @@ const Index = () => {
       </section>
 
       {/* About Section */}
+      <section className="py-20 px-4 bg-card">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div className="md:order-2">
+            <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              Biofeedback é uma técnica que treina as pessoas a melhorar a sua saúde usando sinais do seu próprio corpo. Através de sensores, você aprende a controlar funções corporais como frequência cardíaca, respiração e tensão muscular.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              É uma abordagem não invasiva e eficaz para gerenciar o estresse, a ansiedade, a dor crônica e melhorar o desempenho geral.
+            </p>
+            <Button size="lg">Saiba Mais</Button>
+          </div>
+          <div className="md:order-1">
+            <div className="aspect-video bg-muted rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="/images/biofeedback-explanation.jpg" 
+                alt="Explicação de Biofeedback" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-4">O que é Biofeedback?</h2>
-          <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Biofeedback é uma técnica que treina as pessoas a controlar as funções do corpo, como frequência cardíaca, respiração e tensão muscular, para melhorar a saúde e o bem-estar.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Benefícios do Biofeedback</h2>
+            <p className="text-lg text-muted-foreground">
+              Melhore sua qualidade de vida com o poder do autocontrole
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                   <Heart className="text-primary" size={24} />
                 </div>
-                <CardTitle>Saúde Mental</CardTitle>
+                <CardTitle>Redução do Estresse</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Ajuda a reduzir o estresse, ansiedade, depressão e melhora o foco e a concentração.
+                  Aprenda a gerenciar e reduzir os níveis de estresse e ansiedade, promovendo um estado de calma e bem-estar.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                   <Award className="text-primary" size={24} />
                 </div>
-                <CardTitle>Performance</CardTitle>
+                <CardTitle>Melhora do Desempenho</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Otimiza o desempenho em esportes, estudos e trabalho, promovendo maior controle e resiliência.
+                  Otimize o desempenho cognitivo e físico, ideal para atletas, estudantes e profissionais.
                 </p>
               </CardContent>
             </Card>
             
             <Card className="bg-card border-border">
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                   <Users className="text-primary" size={24} />
                 </div>
-                <CardTitle>Bem-Estar Físico</CardTitle>
+                <CardTitle>Alívio da Dor Crônica</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Alivia dores crônicas, melhora a qualidade do sono e auxilia no controle de condições físicas.
+                  Ajuda no manejo da dor crônica, como enxaquecas e dores musculares, através do controle da tensão.
                 </p>
               </CardContent>
             </Card>
@@ -204,9 +231,9 @@ const Index = () => {
       <section id="tecnicos-section" className="py-20 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Nossos Técnicos Certificados</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Técnicos Certificados</h2>
             <p className="text-lg text-muted-foreground">
-              Profissionais qualificados e treinados para o seu bem-estar
+              Profissionais qualificados e treinados pelo método Fredy Vinagre
             </p>
           </div>
 
