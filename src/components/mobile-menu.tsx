@@ -13,7 +13,7 @@ const MobileMenu = ({ onNavigate, onScrollToTecnicos }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Encontrar Técnicos", action: onScrollToTecnicos },
+    { label: "Encontrar profissionais", action: onScrollToTecnicos },
     { label: "Quero me certificar", action: () => onNavigate('/certificacao') },
     { label: "Quem é Fredy Vinagre", action: () => onNavigate('/fredy-vinagre') },
   ];
