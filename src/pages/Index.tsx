@@ -44,7 +44,8 @@ const Index = () => {
       setLoading(true);
       const { data, error } = await supabase
         .from('tecnicos')
-        .select('*');
+        .select('*')
+        .order('created_at', { ascending: true }); // Adicionado ordenação por created_at
 
       if (error) {
         console.error("Error fetching tecnicos:", error);
