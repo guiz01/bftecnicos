@@ -141,7 +141,7 @@ const Index = () => {
             Encontre profissionais de Biofeedback em língua portuguesa que estão qualificados para utilizarem os únicos dispositivos certificados com marca CE.
           </p>
           <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToTecnicos}>
-            Encontrar os profissionais
+            Encontrar profissionais
           </Button>
         </div>
       </section>
@@ -400,7 +400,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" onClick={scrollToTecnicos}>
-              Encontrar os profissionais
+              Encontrar profissionais
             </Button>
             <Button size="lg" className="border-white text-white hover:bg-white hover:text-primary" style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}>
               Quero me certificar
