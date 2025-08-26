@@ -386,7 +386,7 @@ const Index = () => {
             Pronto para transformar sua vida?
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-8">
-            Encontre um técnico certificado perto de você e comece sua jornada de bem-estar.
+            Encontre um profissional certificado perto de você e comece sua jornada de bem-estar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" onClick={scrollToTecnicos}>
