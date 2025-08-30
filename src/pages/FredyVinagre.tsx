@@ -10,18 +10,18 @@ import { Heart, Award, Users, BookOpen, Globe, Mail, Phone, MapPin, Instagram, S
 import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from "@/components/pagination";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header"; // Importando o novo componente Header
+import Header from "@/components/Header";
 
 interface Tecnico {
   id: string;
   name: string;
-  title: string;
-  location: string;
-  email: string;
-  phone: string;
-  website: string;
-  social_media: string;
-  specialty: string;
+  title: string | null;
+  location: string | null;
+  email: string | null;
+  phone: string | null;
+  website: string | null;
+  social_media: string | null;
+  specialty: string | null;
 }
 
 const FredyVinagre = () => {
@@ -44,7 +44,7 @@ const FredyVinagre = () => {
       const { data, error } = await supabase
         .from('tecnicos')
         .select('*')
-        .order('created_at', { ascending: true }); // Adicionado ordenação por created_at
+        .order('created_at', { ascending: true });
 
       if (error) {
         console.error("Error fetching tecnicos:", error);
@@ -67,11 +67,11 @@ const FredyVinagre = () => {
     } else {
       const filtered = tecnicos.filter(tecnico => 
         tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
+        (tecnico.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.specialty || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.email || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.phone || '').toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredTecnicos(filtered);
       setTotalPages(Math.ceil(filtered.length / tecnicosPerPage));
@@ -84,20 +84,20 @@ const FredyVinagre = () => {
   };
 
   const handleScrollToTecnicos = () => {
-    navigate('/'); // Navigate to home page
+    navigate('/');
     setTimeout(() => {
       const element = document.getElementById('tecnicos-section');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100); // Small delay to allow page to render
+    }, 100);
   };
 
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
   const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
-  const formatWebsiteUrl = (url: string) => {
+  const formatWebsiteUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
@@ -105,7 +105,7 @@ const FredyVinagre = () => {
     return `https://${url}`;
   };
 
-  const formatSocialMediaUrl = (url: string) => {
+  const formatSocialMediaUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
@@ -272,7 +272,7 @@ const FredyVinagre = () => {
               </div>
               
               {/* YouTube Embed - Movido para aqui, sem título */}
-              <div className="mt-20 w-full"> {/* Ajustado o margin-top para espaçamento */}
+              <div className="mt-20 w-full">
                 <div className="w-full h-[600px] bg-muted rounded-xl overflow-hidden shadow-lg">
                   <iframe
                     src="https://www.youtube.com/embed/FHd-bVV2E0I"

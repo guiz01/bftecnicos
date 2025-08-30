@@ -10,23 +10,23 @@ import { MapPin, Globe, Mail, Phone, ExternalLink, Heart, Users, Award, Search }
 import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from "@/components/pagination";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header"; // Importando o novo componente Header
+import Header from "@/components/Header";
 
 interface Tecnico {
   id: string;
   name: string;
-  title: string;
-  location: string;
-  email: string;
-  phone: string;
-  website: string;
-  social_media: string;
-  specialty: string;
+  title: string | null;
+  location: string | null;
+  email: string | null;
+  phone: string | null;
+  website: string | null;
+  social_media: string | null;
+  specialty: string | null;
 }
 
 const NotFound = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Adicionando useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.error(
@@ -75,11 +75,11 @@ const NotFound = () => {
     } else {
       const filtered = tecnicos.filter(tecnico => 
         tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
+        (tecnico.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.specialty || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.email || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.phone || '').toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredTecnicos(filtered);
       setTotalPages(Math.ceil(filtered.length / tecnicosPerPage));
@@ -92,20 +92,20 @@ const NotFound = () => {
   };
 
   const handleScrollToTecnicos = () => {
-    navigate('/'); // Navigate to home page
+    navigate('/');
     setTimeout(() => {
       const element = document.getElementById('tecnicos-section');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 100); // Small delay to allow page to render
+    }, 100);
   };
 
   const indexOfLastTecnico = currentPage * tecnicosPerPage;
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
   const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
-  const formatWebsiteUrl = (url: string) => {
+  const formatWebsiteUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
@@ -113,7 +113,7 @@ const NotFound = () => {
     return `https://${url}`;
   };
 
-  const formatSocialMediaUrl = (url: string) => {
+  const formatSocialMediaUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;

@@ -15,20 +15,20 @@ import Header from "@/components/Header";
 interface Tecnico {
   id: string;
   name: string;
-  title: string;
-  location: string;
-  email: string;
-  phone: string;
-  website: string;
-  social_media: string;
-  specialty: string;
-  avatar_url?: string;
+  title: string | null;
+  location: string | null;
+  email: string | null;
+  phone: string | null;
+  website: string | null;
+  social_media: string | null;
+  specialty: string | null;
+  avatar_url?: string | null;
 }
 
 const Index = () => {
   const [tecnicos, setTecnicos] = useState<Tecnico[]>([]);
   const [filteredTecnicos, setFilteredTecnicos] = useState<Tecnico[]>([]);
-  const [loading, setLoading] = useState(true); // Correção aqui
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -45,7 +45,7 @@ const Index = () => {
       const { data, error } = await supabase
         .from('tecnicos')
         .select('*')
-        .order('created_at', { ascending: true }); // Adicionado ordenação por created_at
+        .order('created_at', { ascending: true });
 
       if (error) {
         console.error("Error fetching tecnicos:", error);
@@ -68,11 +68,11 @@ const Index = () => {
     } else {
       const filtered = tecnicos.filter(tecnico => 
         tecnico.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.specialty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        tecnico.phone.toLowerCase().includes(searchTerm.toLowerCase())
+        (tecnico.title || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.location || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.specialty || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.email || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (tecnico.phone || '').toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredTecnicos(filtered);
       setTotalPages(Math.ceil(filtered.length / tecnicosPerPage));
@@ -95,7 +95,7 @@ const Index = () => {
   const indexOfFirstTecnico = indexOfLastTecnico - tecnicosPerPage;
   const currentTecnicos = filteredTecnicos.slice(indexOfFirstTecnico, indexOfLastTecnico);
 
-  const formatWebsiteUrl = (url: string) => {
+  const formatWebsiteUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
@@ -103,7 +103,7 @@ const Index = () => {
     return `https://${url}`;
   };
 
-  const formatSocialMediaUrl = (url: string) => {
+  const formatSocialMediaUrl = (url: string | null) => {
     if (!url) return '';
     if (url.startsWith('http://') || url.startsWith('https://')) {
       return url;
@@ -149,13 +149,11 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-20 px-4 bg-card">
-        <div className="max-w-6xl mx-auto text-center"> {/* Alterado para text-center e removido grid */}
+        <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">O que é Biofeedback?</h2>
-          <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto"> {/* Adicionado max-w e mx-auto para centralizar */}
+          <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
             Com o Biofeedback, o corpo aprende a regular o sistema nervoso e a transformar o stress em equilíbrio. Esta terapia estimula a neuroplasticidade — a habilidade do cérebro de criar novas ligações e aprender a reagir de forma mais calma e saudável à vida.
           </p>
-          {/* Removido o botão "Saiba Mais" */}
-          {/* Removida a div com a imagem */}
         </div>
       </section>
 
