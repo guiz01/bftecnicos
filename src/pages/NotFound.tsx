@@ -11,6 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import Pagination from "@/components/pagination";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import GTranslateWrapper from "@/components/GTranslateWrapper";
 
 interface Tecnico {
   id: string;
@@ -126,6 +127,9 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* GTranslate Wrapper */}
+      <GTranslateWrapper />
+      
       {/* Header */}
       <Header onScrollToTecnicos={handleScrollToTecnicos} />
 
