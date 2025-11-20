@@ -328,7 +328,7 @@ const NotFound = () => {
               size="lg" 
               className="border-white text-white hover:bg-white hover:text-primary" 
               style={{ backgroundColor: 'hsl(0deg 0% 12.16%)' }}
-              onClick={() => window.open('https://fredyvinagre.com/comprar-equipamento/', '_blank')}
+              onClick={() => window.open('https://fredyvinagre.com/equipamentos', '_blank')}
             >
               Quero ser um terapeuta
             </Button>
